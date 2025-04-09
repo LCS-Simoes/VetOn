@@ -1,0 +1,107 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\VetOn\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|d:\\veton\\f_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:f_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|D:\\VetOn\\f_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:f_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|D:\\VetOn\\globais.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:globais.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|d:\\veton\\f_secretaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:f_secretaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|D:\\VetOn\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "F_Secretaria.cs [Design]",
+              "DocumentMoniker": "D:\\VetOn\\F_Secretaria.cs",
+              "RelativeDocumentMoniker": "F_Secretaria.cs",
+              "ToolTip": "D:\\VetOn\\F_Secretaria.cs [Design]",
+              "RelativeToolTip": "F_Secretaria.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T21:51:55.797Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Globais.cs",
+              "DocumentMoniker": "D:\\VetOn\\Globais.cs",
+              "RelativeDocumentMoniker": "Globais.cs",
+              "ToolTip": "D:\\VetOn\\Globais.cs",
+              "RelativeToolTip": "Globais.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T20:30:21.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Banco.cs",
+              "DocumentMoniker": "D:\\VetOn\\Banco.cs",
+              "RelativeDocumentMoniker": "Banco.cs",
+              "ToolTip": "D:\\VetOn\\Banco.cs",
+              "RelativeToolTip": "Banco.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T20:30:10.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "F_Principal.cs",
+              "DocumentMoniker": "D:\\VetOn\\F_Principal.cs",
+              "RelativeDocumentMoniker": "F_Principal.cs",
+              "ToolTip": "D:\\VetOn\\F_Principal.cs",
+              "RelativeToolTip": "F_Principal.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAwwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T19:45:12.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "F_Principal.cs [Design]",
+              "DocumentMoniker": "D:\\VetOn\\F_Principal.cs",
+              "RelativeDocumentMoniker": "F_Principal.cs",
+              "ToolTip": "D:\\VetOn\\F_Principal.cs [Design]",
+              "RelativeToolTip": "F_Principal.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T19:38:06.517Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
