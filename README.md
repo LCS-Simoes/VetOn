@@ -51,14 +51,11 @@ O banco é composto por tabelas relacionais:
 
 ---
 
-
----
-
 ## 🧪 Como executar
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/SEU_USUARIO/VeterinariaForms.git
+git clone https://github.com/LCS-Simoes/VeterinariaForms.git
 Abra o projeto no Visual Studio 2022
 Execute o projeto (F5)
 O banco SQLite é criado automaticamente (ou já acompanha um .db pronto)
