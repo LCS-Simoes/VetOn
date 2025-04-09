@@ -62,7 +62,7 @@ git clone https://github.com/SEU_USUARIO/VeterinariaForms.git
 Abra o projeto no Visual Studio 2022
 Execute o projeto (F5)
 O banco SQLite é criado automaticamente (ou já acompanha um .db pronto)
-
+```
 ## 🐶 Autor
 Desenvolvido por **Lucas Simões**  
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lucasim%C3%B5es/)  
