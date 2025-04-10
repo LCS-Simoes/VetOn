@@ -26,10 +26,17 @@ namespace VetOn
         {
             if(Globais.nivel == "secretaria")
             {
+                
                 F_Secretaria f_secretaria = new F_Secretaria();
+                //Componentes extras
+                f_secretaria.lb_nomeusuario.Text = dt.Rows[0].Field<string>("t_nomeusuario");
+                f_secretaria.lb_nivelacesso.Text = nivel;
                 f_secretaria.ShowDialog();
+                
+                
 
-            }else if (Globais.nivel == "veterinaria")
+            }
+            else if (Globais.nivel == "veterinaria")
             {
 
             }else if(Globais.nivel == "farmacia")
@@ -65,6 +72,7 @@ namespace VetOn
                 if(dt.Rows.Count == 1)
                 {
                     string nivel = dt.Rows[0].Field<string>("t_nivel");
+                    
                     Globais.nivel = nivel;
                     VerificarNivel(nivel);
                 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace VetOn
 {
@@ -19,6 +20,9 @@ namespace VetOn
             return conexao;
         }
 
+        
+
+        //ÁREA DE CONSULTAS
         public static DataTable dql(string sql)
         {
             SQLiteDataAdapter da = null;
@@ -31,6 +35,7 @@ namespace VetOn
                     cmd.CommandText = sql;
                     da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
                     da.Fill(dt);
+                    ConexaoBanco().Close();
                     return dt;
                 }
             }
@@ -40,5 +45,37 @@ namespace VetOn
                 throw ex;
             }
         }
+
+        public static void dml(string query, string msgOK = null, string msgERRO = null)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = query;
+                    da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                    cmd.ExecuteNonQuery();
+                    ConexaoBanco().Close();
+                    if (msgOK != null)
+                    {
+                        MessageBox.Show(msgOK);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                if(msgERRO != null)
+                {
+                    MessageBox.Show(msgERRO + "\n" + ex);
+                }
+                ConexaoBanco().Close();
+                throw ex;
+            }
+        }
+
+        //
     }
 }

@@ -84,6 +84,9 @@
     <EmbeddedResource Include="F_Principal.resx">
       <DependentUpon>F_Principal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_Secretaria.resx">
+      <DependentUpon>F_Secretaria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -110,6 +113,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\VetOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

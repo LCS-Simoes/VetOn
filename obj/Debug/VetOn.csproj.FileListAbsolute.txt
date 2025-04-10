@@ -17,3 +17,4 @@ D:\VetOn\bin\Debug\EntityFramework.xml
 D:\VetOn\bin\Debug\EntityFramework.SqlServer.xml
 D:\VetOn\bin\Debug\System.Data.SQLite.xml
 D:\VetOn\obj\Debug\VetOn.csproj.Up2Date
+D:\VetOn\obj\Debug\VetOn.F_Secretaria.resources
