@@ -18,7 +18,7 @@ Este projeto é um sistema desktop desenvolvido com **C# e Windows Forms**, util
 - **Controle de Estoque**  
   Gerencia medicamentos, vacinas, rações e demais produtos utilizados na clínica.
 
-- ** agamentos**  
+- **Pagamentos**  
   Controla os pagamentos realizados, forma de pagamento.
 
 - **Administração de Funcionários**  
