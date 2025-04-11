@@ -75,7 +75,5 @@ namespace VetOn
                 throw ex;
             }
         }
-
-        //
     }
 }
