@@ -56,8 +56,30 @@ namespace VetOn
                 mb_cep.Text = dt.Rows[0].Field<string>("t_cep");
                 mb_cpf.Text = dt.Rows[0].Field<string>("t_cpf");
                 np_numero.Value = dt.Rows[0].Field<Int64>("n_numerocasa");
+
+
+                DataTable dtAnimal = Banco.dql(@"SELECT * FROM tb_animais WHERE n_idcliente = " + searchID);
+                if (dtAnimal.Rows.Count > 0)
+                {
+                    tb_idanimal.Text = dt.Rows[0].Field<Int64>("n_idanimal").ToString();
+                    tb_especieanimal.Text = dt.Rows[0].Field<string>("t_especie");
+                    tb_racaanimal.Text = dt.Rows[0].Field<string>("t_raca");
+                    cb_generoanimal.Text = dt.Rows[0].Field<string>("t_genero");
+                    np_idadeanimal.Value = dt.Rows[0].Field<Int64>("n_idade");
+
+                    //Talvez otimizar posteriormente
+                }
+                else {
+                    //Otimizar
+                    tb_idanimal.Clear();
+                    tb_nomeanimal.Clear();
+                    tb_especieanimal.Clear();
+                    tb_racaanimal.Clear();
+                    cb_generoanimal.Text = "";
+                    np_idadeanimal.Value = 0;
+                    return;
+                }
             }
-            
         }
 
         //Validações -- Otimizar depois ou passar para classe Funções
@@ -112,11 +134,13 @@ namespace VetOn
             ValidacoesClientes();
             if(tb_idcliente.Text == "")
             {
-
+                query = String.Format($"INSERT ");
+                Banco.dml(query);
             }
             else
             {
-
+                query = String.Format($"UPDATE");
+                Banco.dml(query);
             }
 
         }
@@ -125,11 +149,18 @@ namespace VetOn
         {
             if (tb_idanimal.Text == "")
             {
-
+                query = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie)
+                VALUES ({0},'{1}','{2}',{3},'{4}'),'{5}'",
+                tb_idcliente.Text
+                //Continuar depois
+                
+                );
+                Banco.dml(query);
             }
             else
             {
-
+                query = String.Format($"UPDATE");
+                Banco.dml(query);
             }
         }
     }
