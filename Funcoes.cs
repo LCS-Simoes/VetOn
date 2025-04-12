@@ -81,7 +81,7 @@ namespace VetOn
         public bool ValidarCEP(string cep)
         {
             cep = new string(cep.Where(char.IsDigit).ToArray());
-            if (cep.Length != 11)
+            if (cep.Length != 8)
             {
                 MessageBox.Show("Preencha o campo de CEP");
                 return false;

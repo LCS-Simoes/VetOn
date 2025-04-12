@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Secretaria));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.agenderConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agendarConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -216,14 +216,14 @@
             this.dgv_clientes.MultiSelect = false;
             this.dgv_clientes.Name = "dgv_clientes";
             this.dgv_clientes.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_clientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_clientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_clientes.Size = new System.Drawing.Size(535, 430);
             this.dgv_clientes.TabIndex = 5;
@@ -489,7 +489,7 @@
             // 
             this.btn_limpar.BackColor = System.Drawing.Color.MintCream;
             this.btn_limpar.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_limpar.Location = new System.Drawing.Point(276, 450);
+            this.btn_limpar.Location = new System.Drawing.Point(276, 459);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(110, 25);
             this.btn_limpar.TabIndex = 37;
@@ -501,7 +501,7 @@
             // 
             this.btn_novoanimal.BackColor = System.Drawing.Color.MintCream;
             this.btn_novoanimal.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_novoanimal.Location = new System.Drawing.Point(145, 450);
+            this.btn_novoanimal.Location = new System.Drawing.Point(145, 459);
             this.btn_novoanimal.Name = "btn_novoanimal";
             this.btn_novoanimal.Size = new System.Drawing.Size(110, 25);
             this.btn_novoanimal.TabIndex = 38;
@@ -513,12 +513,13 @@
             // 
             this.btn_cadastrargeral.BackColor = System.Drawing.Color.MintCream;
             this.btn_cadastrargeral.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cadastrargeral.Location = new System.Drawing.Point(13, 450);
+            this.btn_cadastrargeral.Location = new System.Drawing.Point(13, 459);
             this.btn_cadastrargeral.Name = "btn_cadastrargeral";
             this.btn_cadastrargeral.Size = new System.Drawing.Size(110, 25);
             this.btn_cadastrargeral.TabIndex = 37;
             this.btn_cadastrargeral.Text = "Cadastrar Ambos";
             this.btn_cadastrargeral.UseVisualStyleBackColor = false;
+            this.btn_cadastrargeral.Click += new System.EventHandler(this.btn_cadastrargeral_Click);
             // 
             // np_numero
             // 
