@@ -224,15 +224,57 @@ namespace VetOn
 
         private void btn_cadastrargeral_Click(object sender, EventArgs e)
         {
+            
             if(tb_idanimal.Text == "" && tb_idcliente.Text == "")
             {
+                //Solução PROVISÓRIA
+                try
+                {
+                    string inserirCliente = String.Format(@"INSERT INTO tb_clientes (t_nomecliente, t_cpf, t_telefone, t_cep, n_numerocasa, t_rua, t_cidade, t_bairro)
+                    VALUES ('{0}','{1}','{2}','{3}',{4},'{5}','{6}','{7}');
+                    SELECT SCOPE_IDENTITY()",
+                    tb_nomecliente.Text,
+                    mb_cpf.Text,
+                    mb_celular.Text,
+                    mb_cep.Text,
+                    np_numero.Value,
+                    tb_rua.Text,
+                    tb_cidade.Text,
+                    tb_bairro.Text
+                    );
+
+                    //Jeito de recuperar o ID do cliente criado
+                    object result = Banco.getScalar(inserirCliente);
+                    int idCliente = Convert.ToInt32(result);
+
+                    //Inserindo Animal com o ID do cliente
+                    string inserirAnimal = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie)
+                    VALUES ({0},'{1}','{2}',{3},'{4}','{5}')",
+                    idCliente,
+                    tb_nomeanimal.Text,
+                    tb_racaanimal.Text,
+                    np_idadeanimal.Value,
+                    cb_generoanimal.Text,
+                    tb_especieanimal.Text
+                    );
+
+                    Banco.dml(inserirAnimal);
+                    dgv_clientes.DataSource = Banco.dql(vquery);
+                    MessageBox.Show("Cliente e animal cadastrados com sucesso!");
+
+
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Erro ao cadastrar: " + ex.Message);
+                }
+
+
 
             }else
             {
-                MessageBox.Show("Impossível realizar ação");
+                MessageBox.Show("Impossível realizar ação: cliente ou animal já existem");
             }
         }
-
         //OBSERVÃÇÕES CLASSES --> Atualizar todos os SQL depois para um repository para cada classe 
     }
 }

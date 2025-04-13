@@ -9,10 +9,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|d:\\veton\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|D:\\VetOn\\f_secretaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:f_secretaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,9 +32,9 @@
               "RelativeDocumentMoniker": "Banco.cs",
               "ToolTip": "D:\\VetOn\\Banco.cs",
               "RelativeToolTip": "Banco.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAE8AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwFkAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T23:12:04.662Z",
+              "WhenOpened": "2025-04-13T20:46:20.168Z",
               "EditorCaption": ""
             },
             {
@@ -49,22 +45,10 @@
               "RelativeDocumentMoniker": "F_Secretaria.cs",
               "ToolTip": "D:\\VetOn\\F_Secretaria.cs",
               "RelativeToolTip": "F_Secretaria.cs",
-              "ViewState": "AgIAANoAAAAAAAAAAAAqwOUAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAAAAsBAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T19:56:29.172Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "F_Secretaria.cs [Design]",
-              "DocumentMoniker": "D:\\VetOn\\F_Secretaria.cs",
-              "RelativeDocumentMoniker": "F_Secretaria.cs",
-              "ToolTip": "D:\\VetOn\\F_Secretaria.cs [Design]",
-              "RelativeToolTip": "F_Secretaria.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T21:51:55.797Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

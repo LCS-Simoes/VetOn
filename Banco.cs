@@ -76,5 +76,20 @@ namespace VetOn
                 throw ex;
             }
         }
+
+        //PROVISORIO
+        public static object getScalar(string query)    
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            using (var cmd = ConexaoBanco().CreateCommand())
+            {
+                cmd.CommandText = query;
+                da = new SQLiteDataAdapter(cmd.CommandText, ConexaoBanco());
+                return cmd.ExecuteScalar();
+            }
+        }
+
     }
 }
