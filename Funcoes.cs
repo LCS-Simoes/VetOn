@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace VetOn
 {
     public class Funcoes
     {
-
+        F_Secretaria secretaria = new F_Secretaria();
         //Validações Clientes
         public bool ValidarCPF(string cpf)
         {
@@ -91,5 +93,29 @@ namespace VetOn
                 return true;
             }
         }
+
+        //Verificar a funcionalidade deposi
+        public void verificarFotos()
+        {
+            if (secretaria.destinoCompleto == "")
+            {
+                if (MessageBox.Show("Sem foto selecionada, deseja continuar?", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No) {return;}
+            }
+            if(secretaria.destinoCompleto != "")
+            {
+                System.IO.File.Copy(secretaria.origemCompleto, secretaria.destinoCompleto, true);
+                if (File.Exists(secretaria.destinoCompleto))
+                {
+                    secretaria.pb_animal.ImageLocation = secretaria.destinoCompleto;
+                }
+                else
+                {
+                    if(MessageBox.Show("Erro ao localizar foto, deseja continuar", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No) {return;}
+                }
+
+            }
+            
+        }
+
     }
 }

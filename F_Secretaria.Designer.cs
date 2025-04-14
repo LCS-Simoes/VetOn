@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Secretaria));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.agenderConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agendarConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +58,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tb_cidade = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pb_animal = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_salvarCliente = new System.Windows.Forms.Button();
             this.btn_salvarAnimal = new System.Windows.Forms.Button();
@@ -80,11 +80,13 @@
             this.np_numero = new System.Windows.Forms.NumericUpDown();
             this.tb_bairro = new System.Windows.Forms.TextBox();
             this.bairro = new System.Windows.Forms.Label();
+            this.btn_addFoto = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_animal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_idadeanimal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_numero)).BeginInit();
             this.SuspendLayout();
@@ -216,14 +218,14 @@
             this.dgv_clientes.MultiSelect = false;
             this.dgv_clientes.Name = "dgv_clientes";
             this.dgv_clientes.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_clientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_clientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_clientes.Size = new System.Drawing.Size(535, 430);
             this.dgv_clientes.TabIndex = 5;
@@ -330,7 +332,7 @@
             // 
             // tb_cidade
             // 
-            this.tb_cidade.Location = new System.Drawing.Point(12, 252);
+            this.tb_cidade.Location = new System.Drawing.Point(16, 252);
             this.tb_cidade.Name = "tb_cidade";
             this.tb_cidade.Size = new System.Drawing.Size(149, 20);
             this.tb_cidade.TabIndex = 21;
@@ -338,21 +340,22 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 233);
+            this.label10.Location = new System.Drawing.Point(13, 234);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 20;
             this.label10.Text = "Cidade";
             // 
-            // pictureBox2
+            // pb_animal
             // 
-            this.pictureBox2.Image = global::VetOn.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(386, 54);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(208, 152);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.pb_animal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb_animal.Image = global::VetOn.Properties.Resources.user;
+            this.pb_animal.Location = new System.Drawing.Point(386, 54);
+            this.pb_animal.Name = "pb_animal";
+            this.pb_animal.Size = new System.Drawing.Size(208, 177);
+            this.pb_animal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_animal.TabIndex = 4;
+            this.pb_animal.TabStop = false;
             // 
             // label11
             // 
@@ -379,7 +382,7 @@
             // 
             this.btn_salvarAnimal.BackColor = System.Drawing.Color.MintCream;
             this.btn_salvarAnimal.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_salvarAnimal.Location = new System.Drawing.Point(85, 413);
+            this.btn_salvarAnimal.Location = new System.Drawing.Point(101, 413);
             this.btn_salvarAnimal.Name = "btn_salvarAnimal";
             this.btn_salvarAnimal.Size = new System.Drawing.Size(110, 25);
             this.btn_salvarAnimal.TabIndex = 24;
@@ -389,7 +392,7 @@
             // 
             // tb_nomeanimal
             // 
-            this.tb_nomeanimal.Location = new System.Drawing.Point(14, 333);
+            this.tb_nomeanimal.Location = new System.Drawing.Point(17, 333);
             this.tb_nomeanimal.Name = "tb_nomeanimal";
             this.tb_nomeanimal.Size = new System.Drawing.Size(149, 20);
             this.tb_nomeanimal.TabIndex = 26;
@@ -397,7 +400,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 317);
+            this.label12.Location = new System.Drawing.Point(13, 317);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(103, 13);
             this.label12.TabIndex = 25;
@@ -405,7 +408,7 @@
             // 
             // tb_racaanimal
             // 
-            this.tb_racaanimal.Location = new System.Drawing.Point(14, 375);
+            this.tb_racaanimal.Location = new System.Drawing.Point(17, 375);
             this.tb_racaanimal.Name = "tb_racaanimal";
             this.tb_racaanimal.Size = new System.Drawing.Size(149, 20);
             this.tb_racaanimal.TabIndex = 28;
@@ -413,7 +416,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(11, 359);
+            this.label13.Location = new System.Drawing.Point(14, 359);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(33, 13);
             this.label13.TabIndex = 27;
@@ -455,7 +458,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(10, 275);
+            this.label16.Location = new System.Drawing.Point(14, 278);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 13);
             this.label16.TabIndex = 34;
@@ -463,15 +466,16 @@
             // 
             // tb_idanimal
             // 
-            this.tb_idanimal.Location = new System.Drawing.Point(13, 294);
+            this.tb_idanimal.Location = new System.Drawing.Point(16, 294);
             this.tb_idanimal.Name = "tb_idanimal";
             this.tb_idanimal.ReadOnly = true;
             this.tb_idanimal.Size = new System.Drawing.Size(85, 20);
             this.tb_idanimal.TabIndex = 33;
+            this.tb_idanimal.TabStop = false;
             // 
             // np_idadeanimal
             // 
-            this.np_idadeanimal.Location = new System.Drawing.Point(13, 417);
+            this.np_idadeanimal.Location = new System.Drawing.Point(17, 417);
             this.np_idadeanimal.Name = "np_idadeanimal";
             this.np_idadeanimal.Size = new System.Drawing.Size(49, 20);
             this.np_idadeanimal.TabIndex = 35;
@@ -479,7 +483,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(11, 401);
+            this.label17.Location = new System.Drawing.Point(14, 401);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(34, 13);
             this.label17.TabIndex = 36;
@@ -515,7 +519,7 @@
             this.btn_cadastrargeral.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cadastrargeral.Location = new System.Drawing.Point(13, 459);
             this.btn_cadastrargeral.Name = "btn_cadastrargeral";
-            this.btn_cadastrargeral.Size = new System.Drawing.Size(110, 25);
+            this.btn_cadastrargeral.Size = new System.Drawing.Size(111, 25);
             this.btn_cadastrargeral.TabIndex = 37;
             this.btn_cadastrargeral.Text = "Cadastrar Ambos";
             this.btn_cadastrargeral.UseVisualStyleBackColor = false;
@@ -549,12 +553,30 @@
             this.bairro.TabIndex = 40;
             this.bairro.Text = "Bairro";
             // 
+            // btn_addFoto
+            // 
+            this.btn_addFoto.BackColor = System.Drawing.Color.MintCream;
+            this.btn_addFoto.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addFoto.Location = new System.Drawing.Point(405, 459);
+            this.btn_addFoto.Name = "btn_addFoto";
+            this.btn_addFoto.Size = new System.Drawing.Size(110, 25);
+            this.btn_addFoto.TabIndex = 42;
+            this.btn_addFoto.Text = "Adicionar Foto";
+            this.btn_addFoto.UseVisualStyleBackColor = false;
+            this.btn_addFoto.Click += new System.EventHandler(this.btn_addFoto_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png";
+            // 
             // F_Secretaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1176, 522);
+            this.Controls.Add(this.btn_addFoto);
             this.Controls.Add(this.tb_bairro);
             this.Controls.Add(this.bairro);
             this.Controls.Add(this.np_numero);
@@ -591,7 +613,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.dgv_clientes);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pb_animal);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_idcliente);
             this.Controls.Add(this.panel1);
@@ -609,7 +631,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_animal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_idadeanimal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.np_numero)).EndInit();
             this.ResumeLayout(false);
@@ -632,7 +654,6 @@
         public System.Windows.Forms.Label lb_nivelacesso;
         private System.Windows.Forms.TextBox tb_idcliente;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridView dgv_clientes;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Label label4;
@@ -669,5 +690,8 @@
         private System.Windows.Forms.MaskedTextBox mb_cep;
         private System.Windows.Forms.TextBox tb_bairro;
         private System.Windows.Forms.Label bairro;
+        private System.Windows.Forms.Button btn_addFoto;
+        public System.Windows.Forms.PictureBox pb_animal;
+        public System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace VetOn
 {
@@ -15,9 +16,14 @@ namespace VetOn
     {
 
         Funcoes funcoes = new Funcoes();
+        //Variaveis
         string query = "";
         string vquery = "";
         string searchID;
+        public string origemCompleto = "";
+        public string foto = "";
+        public string pastaDestino = Globais.caminhoFotos;
+        public string destinoCompleto = "";
 
         public F_Secretaria()
         {
@@ -181,6 +187,9 @@ namespace VetOn
         {
             int atualizou = 0;
 
+            if()
+
+
             if (tb_idanimal.Text == "")
             {
                 query = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie)
@@ -268,11 +277,35 @@ namespace VetOn
                     MessageBox.Show("Erro ao cadastrar: " + ex.Message);
                 }
 
-
-
             }else
             {
                 MessageBox.Show("Impossível realizar ação: cliente ou animal já existem");
+            }
+        }
+
+        private void btn_addFoto_Click(object sender, EventArgs e)
+        {
+        
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                origemCompleto = openFileDialog1.FileName; 
+                foto = openFileDialog1.SafeFileName;
+                destinoCompleto = pastaDestino + foto;
+            }
+
+            if (File.Exists(destinoCompleto))
+            {
+                if (MessageBox.Show("Arquivo já existe, deseja substituir?", "Susbstituir", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
+            }
+
+            System.IO.File.Copy(origemCompleto, destinoCompleto, true);
+            if (File.Exists(destinoCompleto))
+            {
+                pb_animal.ImageLocation = destinoCompleto;
+            }
+            else 
+            {
+                MessageBox.Show("Imagem não copiada");
             }
         }
         //OBSERVÃÇÕES CLASSES --> Atualizar todos os SQL depois para um repository para cada classe 

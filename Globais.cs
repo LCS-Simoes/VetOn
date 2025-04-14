@@ -16,5 +16,8 @@ namespace VetOn
 
         //Usuario
         public static string nivel = "";
+
+        //Animais
+        public static string caminhoFotos = caminho + @"\Fotos\";
     }
 }
