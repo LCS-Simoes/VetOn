@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "D:\\VetOn\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|d:\\veton\\funcoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:funcoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|D:\\VetOn\\f_secretaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:f_secretaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|d:\\veton\\f_secretaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|D:\\VetOn\\f_secretaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:f_secretaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +30,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "F_Secretaria.cs",
               "DocumentMoniker": "D:\\VetOn\\F_Secretaria.cs",
               "RelativeDocumentMoniker": "F_Secretaria.cs",
               "ToolTip": "D:\\VetOn\\F_Secretaria.cs",
               "RelativeToolTip": "F_Secretaria.cs",
-              "ViewState": "AgIAAA4BAAAAAAAAAAAkwCcBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAwwB0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T19:56:29.172Z",
+              "WhenOpened": "2025-04-10T19:56:29.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Funcoes.cs",
+              "DocumentMoniker": "D:\\VetOn\\Funcoes.cs",
+              "RelativeDocumentMoniker": "Funcoes.cs",
+              "ToolTip": "D:\\VetOn\\Funcoes.cs",
+              "RelativeToolTip": "Funcoes.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAgwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T17:56:12.468Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "F_Secretaria.cs [Design]",
               "DocumentMoniker": "D:\\VetOn\\F_Secretaria.cs",
               "RelativeDocumentMoniker": "F_Secretaria.cs",
               "ToolTip": "D:\\VetOn\\F_Secretaria.cs [Design]",
               "RelativeToolTip": "F_Secretaria.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T21:18:07.142Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-13T21:18:07.142Z"
             }
           ]
         }

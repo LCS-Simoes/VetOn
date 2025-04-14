@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace VetOn
 {
@@ -20,10 +21,10 @@ namespace VetOn
         string query = "";
         string vquery = "";
         string searchID;
-        public string origemCompleto = "";
-        public string foto = "";
-        public string pastaDestino = Globais.caminhoFotos;
-        public string destinoCompleto = "";
+        string origemCompleto = "";
+        string foto = "";
+        string pastaDestino = Globais.caminhoFotos;
+        string destinoCompleto = "";
 
         public F_Secretaria()
         {
@@ -66,16 +67,16 @@ namespace VetOn
                 np_numero.Value = dt.Rows[0].Field<Int64>("n_numerocasa");
 
 
-                DataTable dtAnimal = Banco.dql(@"SELECT * FROM tb_animais WHERE n_idcliente = " + searchID);
+                DataTable dtAnimal = Banco.dql(@"SELECT * FROM tb_animais WHERE n_idcliente =" + searchID);
                 if (dtAnimal.Rows.Count > 0)
                 {
-                    tb_idanimal.Text = dt.Rows[0].Field<Int64>("n_idanimal").ToString();
-                    tb_especieanimal.Text = dt.Rows[0].Field<string>("t_especie");
-                    tb_racaanimal.Text = dt.Rows[0].Field<string>("t_raca");
-                    cb_generoanimal.Text = dt.Rows[0].Field<string>("t_genero");
-                    np_idadeanimal.Value = dt.Rows[0].Field<Int64>("n_idade");
-
-                    //Talvez otimizar posteriormente
+                    tb_idanimal.Text = dtAnimal.Rows[0].Field<Int64>("n_idanimal").ToString();
+                    tb_nomeanimal.Text = dtAnimal.Rows[0].Field<string>("t_nomeanimal");
+                    tb_especieanimal.Text = dtAnimal.Rows[0].Field<string>("t_especie");
+                    tb_racaanimal.Text = dtAnimal.Rows[0].Field<string>("t_raca");
+                    cb_generoanimal.Text = dtAnimal.Rows[0].Field<string>("t_genero");
+                    np_idadeanimal.Value = dtAnimal.Rows[0].Field<Int64>("n_idade");
+                    pb_animal.ImageLocation = dtAnimal.Rows[0].Field<string>("t_fotos");
                 }
                 else {
                     //Otimizar
@@ -85,6 +86,7 @@ namespace VetOn
                     tb_racaanimal.Clear();
                     cb_generoanimal.Text = "";
                     np_idadeanimal.Value = 0;
+                    pb_animal.ImageLocation = @"D:\VetOn\images\user.png";
                     return;
                 }
             }
@@ -157,7 +159,7 @@ namespace VetOn
             }
             else
             {
-                query = String.Format(@"UPDATE tb_clientes SET t_nomecliente='{0}', t_cpf='{1}', t_telefone='{2}', t_cep='{3}', n_numerocasa={4}, t_rua='{5}', t_cidade='{6}', t_bairro='{7}' WHERE n_idcliente={8}",
+                query = String.Format(@"UPDATE tb_clientes SET t_nomecliente='{0}', t_cpf='{1}', t_telefone='{2}', t_cep='{3}', n_numerocasa={4}, t_rua='{5}', t_cidade='{6}', t_bairro='{7}', WHERE n_idcliente={8}",
                 tb_nomecliente.Text,
                 mb_cpf.Text,
                 mb_celular.Text,
@@ -187,31 +189,48 @@ namespace VetOn
         {
             int atualizou = 0;
 
-            if()
-
+            //Verificando fotos
+            if (destinoCompleto == "")
+            {
+                if (MessageBox.Show("Sem foto selecionada, deseja continuar?", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
+            }
+            if (destinoCompleto != "")
+            {
+                System.IO.File.Copy(origemCompleto, destinoCompleto, true);
+                if (File.Exists(destinoCompleto))
+                {
+                    pb_animal.ImageLocation = destinoCompleto;
+                }
+                else
+                {
+                    if (MessageBox.Show("Erro ao localizar foto, deseja continuar", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
+                }
+            }
 
             if (tb_idanimal.Text == "")
             {
-                query = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie)
-                VALUES ({0},'{1}','{2}',{3},'{4}','{5}')",
+                query = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie, t_fotos)
+                VALUES ({0},'{1}','{2}',{3},'{4}','{5}', '{6}')",
                 tb_idcliente.Text,
-                tb_nomeanimal.Text,
-                tb_racaanimal.Text,
-                np_idadeanimal.Value,
-                cb_generoanimal.Text,
-                tb_especieanimal.Text
-                );
-            }
-            else
-            {
-                query = String.Format($"UPDATE tb_animais SET t_nomeanimal='{0}', t_raca='{1}', n_idade={2}, t_genero='{3}', t_especie='{4}', n_idcliente={5} WHERE n_idanimal={6}",
                 tb_nomeanimal.Text,
                 tb_racaanimal.Text,
                 np_idadeanimal.Value,
                 cb_generoanimal.Text,
                 tb_especieanimal.Text,
+                destinoCompleto
+                );
+            }
+            else
+            {
+                query = String.Format(@"UPDATE tb_animais SET t_nomeanimal='{0}', t_raca='{1}', n_idade={2}, t_genero='{3}', t_especie='{4}', t_fotos='{5}', n_idcliente={6} WHERE n_idanimal={7}",
+                tb_nomeanimal.Text,
+                tb_racaanimal.Text,
+                np_idadeanimal.Value,
+                cb_generoanimal.Text,
+                tb_especieanimal.Text,
+                destinoCompleto,
                 tb_idcliente.Text,
-                searchID
+                tb_idanimal.Text
                 );
                 atualizou = 1;
             }
@@ -256,15 +275,36 @@ namespace VetOn
                     object result = Banco.getScalar(inserirCliente);
                     int idCliente = Convert.ToInt32(result);
 
-                    //Inserindo Animal com o ID do cliente
-                    string inserirAnimal = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie)
-                    VALUES ({0},'{1}','{2}',{3},'{4}','{5}')",
+
+                    //Verificação de fotos
+                    if (destinoCompleto == "")
+                    {
+                        if (MessageBox.Show("Sem foto selecionada, deseja continuar?", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
+                    }
+                    if (destinoCompleto != "")
+                    {
+                        System.IO.File.Copy(origemCompleto,destinoCompleto, true);
+                        if (File.Exists(destinoCompleto))
+                        {
+                            pb_animal.ImageLocation = destinoCompleto;
+                        }
+                        else
+                        {
+                            if (MessageBox.Show("Erro ao localizar foto, deseja continuar", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
+                        }
+
+                    }
+
+                    //Inserindo Animal com o ID do cliente 
+                    string inserirAnimal = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie, t_fotos)
+                    VALUES ({0},'{1}','{2}',{3},'{4}','{5}','{6}')",
                     idCliente,
                     tb_nomeanimal.Text,
                     tb_racaanimal.Text,
                     np_idadeanimal.Value,
                     cb_generoanimal.Text,
-                    tb_especieanimal.Text
+                    tb_especieanimal.Text,
+                    destinoCompleto
                     );
 
                     Banco.dml(inserirAnimal);
@@ -297,16 +337,7 @@ namespace VetOn
             {
                 if (MessageBox.Show("Arquivo já existe, deseja substituir?", "Susbstituir", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
             }
-
-            System.IO.File.Copy(origemCompleto, destinoCompleto, true);
-            if (File.Exists(destinoCompleto))
-            {
-                pb_animal.ImageLocation = destinoCompleto;
-            }
-            else 
-            {
-                MessageBox.Show("Imagem não copiada");
-            }
+             pb_animal.ImageLocation = destinoCompleto;    
         }
         //OBSERVÃÇÕES CLASSES --> Atualizar todos os SQL depois para um repository para cada classe 
     }
