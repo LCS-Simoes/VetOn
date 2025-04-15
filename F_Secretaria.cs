@@ -40,7 +40,9 @@ namespace VetOn
             ORDER BY c.t_nomecliente";
             dgv_clientes.DataSource = Banco.dql(vquery);
             dgv_clientes.Columns[0].Width = 70; 
-            dgv_clientes.Columns[1].Width = 100; 
+            dgv_clientes.Columns[1].Width = 100;
+            cb_generoanimal.Items.Add("Macho");
+            cb_generoanimal.Items.Add("Fêmea");
         }
 
         private void dgv_clientes_SelectionChanged(object sender, EventArgs e)
@@ -159,7 +161,7 @@ namespace VetOn
             }
             else
             {
-                query = String.Format(@"UPDATE tb_clientes SET t_nomecliente='{0}', t_cpf='{1}', t_telefone='{2}', t_cep='{3}', n_numerocasa={4}, t_rua='{5}', t_cidade='{6}', t_bairro='{7}', WHERE n_idcliente={8}",
+                query = String.Format(@"UPDATE tb_clientes SET t_nomecliente='{0}', t_cpf='{1}', t_telefone='{2}', t_cep='{3}', n_numerocasa={4}, t_rua='{5}', t_cidade='{6}', t_bairro='{7}' WHERE n_idcliente={8}",
                 tb_nomecliente.Text,
                 mb_cpf.Text,
                 mb_celular.Text,
@@ -171,6 +173,8 @@ namespace VetOn
                 searchID
                 );
                 atualizou = 1;
+
+                MessageBox.Show("Cliente atualizado");
             }
             Banco.dml(query);
             int linha = dgv_clientes.SelectedRows[0].Index;
@@ -207,6 +211,17 @@ namespace VetOn
                 }
             }
 
+            //Validação provisoria
+            if (cb_generoanimal.Text == "Macho")
+            {
+                cb_generoanimal.Text = "M";
+            }
+            else
+            {
+                cb_generoanimal.Text = "F";
+            }
+
+
             if (tb_idanimal.Text == "")
             {
                 query = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie, t_fotos)
@@ -219,6 +234,7 @@ namespace VetOn
                 tb_especieanimal.Text,
                 destinoCompleto
                 );
+                MessageBox.Show("Animal Cadastrado");
             }
             else
             {
@@ -233,6 +249,7 @@ namespace VetOn
                 tb_idanimal.Text
                 );
                 atualizou = 1;
+                MessageBox.Show("Animal atualizado");
             }
             Banco.dml(query);
 
@@ -295,17 +312,28 @@ namespace VetOn
 
                     }
 
-                    //Inserindo Animal com o ID do cliente 
-                    string inserirAnimal = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie, t_fotos)
+                    //Validação provisoria
+                    if(cb_generoanimal.Text == "Macho")
+                    {
+                        cb_generoanimal.Text = "M";
+                    }
+                    else
+                    {
+                        cb_generoanimal.Text = "F";
+                    }
+
+
+                        //Inserindo Animal com o ID do cliente 
+                        string inserirAnimal = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie, t_fotos)
                     VALUES ({0},'{1}','{2}',{3},'{4}','{5}','{6}')",
-                    idCliente,
-                    tb_nomeanimal.Text,
-                    tb_racaanimal.Text,
-                    np_idadeanimal.Value,
-                    cb_generoanimal.Text,
-                    tb_especieanimal.Text,
-                    destinoCompleto
-                    );
+                        idCliente,
+                        tb_nomeanimal.Text,
+                        tb_racaanimal.Text,
+                        np_idadeanimal.Value,
+                        cb_generoanimal.Text,
+                        tb_especieanimal.Text,
+                        destinoCompleto
+                        );
 
                     Banco.dml(inserirAnimal);
                     dgv_clientes.DataSource = Banco.dql(vquery);
