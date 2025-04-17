@@ -105,7 +105,8 @@ namespace VetOn
         //MenuStrip
         private void agenderConsultasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            F_AgendarConsultas f_agendar = new F_AgendarConsultas();
+            f_agendar.Show();
         }
 
         //Funções Buttons

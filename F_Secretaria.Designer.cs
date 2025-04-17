@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.agenderConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agendarConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verificarConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verificarConsultasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -104,18 +103,10 @@
             // 
             // agenderConsultasToolStripMenuItem
             // 
-            this.agenderConsultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agendarConsultasToolStripMenuItem});
             this.agenderConsultasToolStripMenuItem.Name = "agenderConsultasToolStripMenuItem";
             this.agenderConsultasToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.agenderConsultasToolStripMenuItem.Text = "Agendamentos";
             this.agenderConsultasToolStripMenuItem.Click += new System.EventHandler(this.agenderConsultasToolStripMenuItem_Click);
-            // 
-            // agendarConsultasToolStripMenuItem
-            // 
-            this.agendarConsultasToolStripMenuItem.Name = "agendarConsultasToolStripMenuItem";
-            this.agendarConsultasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.agendarConsultasToolStripMenuItem.Text = "Agendar Consultas";
             // 
             // verificarConsultasToolStripMenuItem
             // 
@@ -642,7 +633,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem agenderConsultasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agendarConsultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verificarConsultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verificarConsultasToolStripMenuItem1;
         private System.Windows.Forms.Panel panel1;

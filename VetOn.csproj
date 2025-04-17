@@ -67,6 +67,12 @@
   <ItemGroup>
     <Compile Include="Banco.cs" />
     <Compile Include="Funcoes.cs" />
+    <Compile Include="F_AgendarConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AgendarConsultas.Designer.cs">
+      <DependentUpon>F_AgendarConsultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     <Compile Include="Globais.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F_AgendarConsultas.resx">
+      <DependentUpon>F_AgendarConsultas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_Principal.resx">
       <DependentUpon>F_Principal.cs</DependentUpon>
     </EmbeddedResource>
