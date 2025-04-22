@@ -39,14 +39,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tb_idcliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_nomeveterinario = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_idconsulta = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cb_horario = new System.Windows.Forms.ComboBox();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_consulta = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.tb_idanimal = new System.Windows.Forms.TextBox();
             this.tb_nomeanimal = new System.Windows.Forms.TextBox();
@@ -69,7 +69,9 @@
             this.dgv_consultas.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_consultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_consultas.Location = new System.Drawing.Point(449, 12);
+            this.dgv_consultas.MultiSelect = false;
             this.dgv_consultas.Name = "dgv_consultas";
+            this.dgv_consultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_consultas.Size = new System.Drawing.Size(595, 469);
             this.dgv_consultas.TabIndex = 0;
             this.dgv_consultas.SelectionChanged += new System.EventHandler(this.dgv_consultas_SelectionChanged);
@@ -151,13 +153,13 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "Nome Veterinário";
             // 
-            // comboBox1
+            // cb_nomeveterinario
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 189);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(233, 21);
-            this.comboBox1.TabIndex = 29;
+            this.cb_nomeveterinario.FormattingEnabled = true;
+            this.cb_nomeveterinario.Location = new System.Drawing.Point(137, 189);
+            this.cb_nomeveterinario.Name = "cb_nomeveterinario";
+            this.cb_nomeveterinario.Size = new System.Drawing.Size(233, 21);
+            this.cb_nomeveterinario.TabIndex = 29;
             // 
             // label2
             // 
@@ -168,14 +170,14 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "ID Consulta";
             // 
-            // textBox1
+            // tb_idconsulta
             // 
-            this.textBox1.Location = new System.Drawing.Point(21, 189);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(85, 20);
-            this.textBox1.TabIndex = 30;
-            this.textBox1.TabStop = false;
+            this.tb_idconsulta.Location = new System.Drawing.Point(21, 189);
+            this.tb_idconsulta.Name = "tb_idconsulta";
+            this.tb_idconsulta.ReadOnly = true;
+            this.tb_idconsulta.Size = new System.Drawing.Size(85, 20);
+            this.tb_idconsulta.TabIndex = 30;
+            this.tb_idconsulta.TabStop = false;
             // 
             // label7
             // 
@@ -195,13 +197,13 @@
             this.label8.TabIndex = 34;
             this.label8.Text = "Horários disponiveis";
             // 
-            // comboBox2
+            // cb_horario
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(21, 292);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(99, 21);
-            this.comboBox2.TabIndex = 35;
+            this.cb_horario.FormattingEnabled = true;
+            this.cb_horario.Location = new System.Drawing.Point(21, 292);
+            this.cb_horario.Name = "cb_horario";
+            this.cb_horario.Size = new System.Drawing.Size(99, 21);
+            this.cb_horario.TabIndex = 35;
             // 
             // vScrollBar1
             // 
@@ -210,12 +212,12 @@
             this.vScrollBar1.Size = new System.Drawing.Size(10, 468);
             this.vScrollBar1.TabIndex = 36;
             // 
-            // dateTimePicker1
+            // dtp_consulta
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(21, 245);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(226, 20);
-            this.dateTimePicker1.TabIndex = 37;
+            this.dtp_consulta.Location = new System.Drawing.Point(21, 245);
+            this.dtp_consulta.Name = "dtp_consulta";
+            this.dtp_consulta.Size = new System.Drawing.Size(226, 20);
+            this.dtp_consulta.TabIndex = 37;
             // 
             // label16
             // 
@@ -345,14 +347,14 @@
             this.Controls.Add(this.tb_idanimal);
             this.Controls.Add(this.tb_nomeanimal);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtp_consulta);
             this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cb_horario);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.tb_idconsulta);
+            this.Controls.Add(this.cb_nomeveterinario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mb_celular);
             this.Controls.Add(this.mb_cpf);
@@ -389,14 +391,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_idcliente;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_nomeveterinario;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_idconsulta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cb_horario;
         private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_consulta;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox tb_idanimal;
         private System.Windows.Forms.TextBox tb_nomeanimal;

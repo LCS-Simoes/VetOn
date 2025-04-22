@@ -14,7 +14,7 @@ namespace VetOn
     public partial class F_AgendarConsultas : Form
     {
         string vquery = "";
-        string searchID;
+        string searchID = "";
 
         public F_AgendarConsultas()
         {
@@ -52,8 +52,12 @@ namespace VetOn
             if(cont > 0)
             {
                 DataTable dt = new DataTable();
-                searchID;
-                string query = @"";
+                searchID = dgv_consultas.Rows[dgv_consultas.SelectedRows[0].Index].Cells[0].Value.ToString();
+                string query = @"SELECT * FROM tb_agenda WHERE n_idagenda=" + searchID;
+                dt = Banco.dql(query);
+
+                tb_idcliente.Text = dt.Rows[0].Field<Int64>("n_idcliente").ToString();
+                tb_nomecliente.Text = dt.Rows[0].Field<string>("t_nomecliente");
             }
         }
     }
