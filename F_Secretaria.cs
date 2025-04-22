@@ -106,6 +106,14 @@ namespace VetOn
         private void agenderConsultasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             F_AgendarConsultas f_agendar = new F_AgendarConsultas();
+
+            //Corrigir posteriormente
+            string nivel = lb_nivelacesso.Text;
+            string nome = lb_nomeusuario.Text;
+
+            f_agendar.lb_nomeusuario.Text = nome;
+            f_agendar.lb_nivelacesso.Text = nivel;
+
             f_agendar.Show();
         }
 

@@ -31,10 +31,7 @@ namespace VetOn
                 //Componentes extras
                 f_secretaria.lb_nomeusuario.Text = dt.Rows[0].Field<string>("t_nomeusuario");
                 f_secretaria.lb_nivelacesso.Text = nivel;
-                f_secretaria.ShowDialog();
-                
-                
-
+                f_secretaria.ShowDialog();  
             }
             else if (Globais.nivel == "veterinaria")
             {

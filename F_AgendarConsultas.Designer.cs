@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_AgendarConsultas));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_consultas = new System.Windows.Forms.DataGridView();
             this.mb_celular = new System.Windows.Forms.MaskedTextBox();
             this.mb_cpf = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -38,31 +38,45 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_idcliente = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tb_idanimal = new System.Windows.Forms.TextBox();
+            this.tb_nomeanimal = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lb_nivelacesso = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lb_nomeusuario = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_addFoto = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_consultas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_consultas
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(449, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(480, 469);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_consultas.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgv_consultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_consultas.Location = new System.Drawing.Point(449, 12);
+            this.dgv_consultas.Name = "dgv_consultas";
+            this.dgv_consultas.Size = new System.Drawing.Size(595, 469);
+            this.dgv_consultas.TabIndex = 0;
+            this.dgv_consultas.SelectionChanged += new System.EventHandler(this.dgv_consultas_SelectionChanged);
             // 
             // mb_celular
             // 
-            this.mb_celular.Location = new System.Drawing.Point(139, 233);
+            this.mb_celular.Location = new System.Drawing.Point(137, 81);
             this.mb_celular.Mask = "(00)00000-0000";
             this.mb_celular.Name = "mb_celular";
             this.mb_celular.Size = new System.Drawing.Size(149, 20);
@@ -70,7 +84,7 @@
             // 
             // mb_cpf
             // 
-            this.mb_cpf.Location = new System.Drawing.Point(24, 233);
+            this.mb_cpf.Location = new System.Drawing.Point(22, 81);
             this.mb_cpf.Mask = "000.000.000-00";
             this.mb_cpf.Name = "mb_cpf";
             this.mb_cpf.Size = new System.Drawing.Size(85, 20);
@@ -79,7 +93,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(136, 217);
+            this.label6.Location = new System.Drawing.Point(134, 65);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 23;
@@ -88,7 +102,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 217);
+            this.label5.Location = new System.Drawing.Point(19, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 13);
             this.label5.TabIndex = 22;
@@ -96,7 +110,7 @@
             // 
             // tb_nomecliente
             // 
-            this.tb_nomecliente.Location = new System.Drawing.Point(139, 181);
+            this.tb_nomecliente.Location = new System.Drawing.Point(137, 29);
             this.tb_nomecliente.Name = "tb_nomecliente";
             this.tb_nomecliente.Size = new System.Drawing.Size(233, 20);
             this.tb_nomecliente.TabIndex = 21;
@@ -104,7 +118,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(136, 162);
+            this.label4.Location = new System.Drawing.Point(134, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 20;
@@ -113,7 +127,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 162);
+            this.label3.Location = new System.Drawing.Point(19, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 19;
@@ -121,25 +135,17 @@
             // 
             // tb_idcliente
             // 
-            this.tb_idcliente.Location = new System.Drawing.Point(24, 181);
+            this.tb_idcliente.Location = new System.Drawing.Point(22, 29);
             this.tb_idcliente.Name = "tb_idcliente";
             this.tb_idcliente.ReadOnly = true;
             this.tb_idcliente.Size = new System.Drawing.Size(85, 20);
             this.tb_idcliente.TabIndex = 18;
             this.tb_idcliente.TabStop = false;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 487);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(940, 27);
-            this.flowLayoutPanel1.TabIndex = 27;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(136, 12);
+            this.label1.Location = new System.Drawing.Point(134, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 28;
@@ -148,7 +154,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 29);
+            this.comboBox1.Location = new System.Drawing.Point(137, 189);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(233, 21);
             this.comboBox1.TabIndex = 29;
@@ -156,7 +162,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 12);
+            this.label2.Location = new System.Drawing.Point(19, 171);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 31;
@@ -164,26 +170,17 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(24, 30);
+            this.textBox1.Location = new System.Drawing.Point(21, 189);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(85, 20);
             this.textBox1.TabIndex = 30;
             this.textBox1.TabStop = false;
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(24, 89);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(85, 20);
-            this.maskedTextBox1.TabIndex = 32;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 73);
+            this.label7.Location = new System.Drawing.Point(18, 229);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 13);
             this.label7.TabIndex = 33;
@@ -192,7 +189,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(136, 73);
+            this.label8.Location = new System.Drawing.Point(19, 276);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(101, 13);
             this.label8.TabIndex = 34;
@@ -201,34 +198,162 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(139, 88);
+            this.comboBox2.Location = new System.Drawing.Point(21, 292);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(149, 21);
+            this.comboBox2.Size = new System.Drawing.Size(99, 21);
             this.comboBox2.TabIndex = 35;
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(919, 13);
+            this.vScrollBar1.Location = new System.Drawing.Point(1034, 12);
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.Size = new System.Drawing.Size(10, 468);
             this.vScrollBar1.TabIndex = 36;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(21, 245);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(226, 20);
+            this.dateTimePicker1.TabIndex = 37;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(19, 117);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.TabIndex = 41;
+            this.label16.Text = "ID Animal";
+            // 
+            // tb_idanimal
+            // 
+            this.tb_idanimal.Location = new System.Drawing.Point(21, 133);
+            this.tb_idanimal.Name = "tb_idanimal";
+            this.tb_idanimal.ReadOnly = true;
+            this.tb_idanimal.Size = new System.Drawing.Size(85, 20);
+            this.tb_idanimal.TabIndex = 40;
+            this.tb_idanimal.TabStop = false;
+            // 
+            // tb_nomeanimal
+            // 
+            this.tb_nomeanimal.Location = new System.Drawing.Point(136, 133);
+            this.tb_nomeanimal.Name = "tb_nomeanimal";
+            this.tb_nomeanimal.Size = new System.Drawing.Size(149, 20);
+            this.tb_nomeanimal.TabIndex = 39;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(133, 117);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(103, 13);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "Nome do Animalzino";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lb_nivelacesso
+            // 
+            this.lb_nivelacesso.AutoSize = true;
+            this.lb_nivelacesso.Location = new System.Drawing.Point(229, 11);
+            this.lb_nivelacesso.Name = "lb_nivelacesso";
+            this.lb_nivelacesso.Size = new System.Drawing.Size(19, 13);
+            this.lb_nivelacesso.TabIndex = 45;
+            this.lb_nivelacesso.Text = "----";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(134, 11);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 13);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "Nível de Acesso:";
+            // 
+            // lb_nomeusuario
+            // 
+            this.lb_nomeusuario.AutoSize = true;
+            this.lb_nomeusuario.Location = new System.Drawing.Point(95, 12);
+            this.lb_nomeusuario.Name = "lb_nomeusuario";
+            this.lb_nomeusuario.Size = new System.Drawing.Size(19, 13);
+            this.lb_nomeusuario.TabIndex = 43;
+            this.lb_nomeusuario.Text = "----";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(42, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 13);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Usuário:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lb_nivelacesso);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.lb_nomeusuario);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 498);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1056, 27);
+            this.panel1.TabIndex = 46;
+            // 
+            // btn_addFoto
+            // 
+            this.btn_addFoto.BackColor = System.Drawing.Color.MintCream;
+            this.btn_addFoto.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addFoto.Location = new System.Drawing.Point(21, 339);
+            this.btn_addFoto.Name = "btn_addFoto";
+            this.btn_addFoto.Size = new System.Drawing.Size(120, 25);
+            this.btn_addFoto.TabIndex = 47;
+            this.btn_addFoto.Text = "Agendar Consulta";
+            this.btn_addFoto.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(97)))));
+            this.button1.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(147, 339);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 25);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "Desmarcar";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // F_AgendarConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(940, 514);
+            this.ClientSize = new System.Drawing.Size(1056, 525);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_addFoto);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.tb_idanimal);
+            this.Controls.Add(this.tb_nomeanimal);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.mb_celular);
             this.Controls.Add(this.mb_cpf);
             this.Controls.Add(this.label6);
@@ -237,12 +362,16 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_idcliente);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_consultas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_AgendarConsultas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.F_AgendarConsultas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_consultas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,7 +379,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_consultas;
         private System.Windows.Forms.MaskedTextBox mb_celular;
         private System.Windows.Forms.MaskedTextBox mb_cpf;
         private System.Windows.Forms.Label label6;
@@ -259,15 +388,26 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_idcliente;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox tb_idanimal;
+        private System.Windows.Forms.TextBox tb_nomeanimal;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label lb_nivelacesso;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label lb_nomeusuario;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_addFoto;
+        private System.Windows.Forms.Button button1;
     }
 }
