@@ -51,13 +51,9 @@ namespace VetOn
 
             if(cont > 0)
             {
-                DataTable dt = new DataTable();
                 searchID = dgv_consultas.Rows[dgv_consultas.SelectedRows[0].Index].Cells[0].Value.ToString();
-                string query = @"SELECT * FROM tb_agenda WHERE n_idagenda=" + searchID;
-                dt = Banco.dql(query);
-
-                tb_idcliente.Text = dt.Rows[0].Field<Int64>("n_idcliente").ToString();
-                tb_nomecliente.Text = dt.Rows[0].Field<string>("t_nomecliente");
+                //Corrigir posteriormente 
+                Funcoes.listarAgendas(searchID, tb_idcliente, tb_idanimal, tb_nomeanimal, tb_nomecliente, cb_horario, cb_nomeveterinario, mb_cpf, mb_celular, dtp_consulta);
             }
         }
     }

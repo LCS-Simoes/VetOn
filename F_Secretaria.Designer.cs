@@ -115,11 +115,12 @@
             this.verificarConsultasToolStripMenuItem.Name = "verificarConsultasToolStripMenuItem";
             this.verificarConsultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.verificarConsultasToolStripMenuItem.Text = "Consultas";
+            this.verificarConsultasToolStripMenuItem.Click += new System.EventHandler(this.verificarConsultasToolStripMenuItem_Click);
             // 
             // verificarConsultasToolStripMenuItem1
             // 
             this.verificarConsultasToolStripMenuItem1.Name = "verificarConsultasToolStripMenuItem1";
-            this.verificarConsultasToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
+            this.verificarConsultasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.verificarConsultasToolStripMenuItem1.Text = "Verificar Consultas";
             // 
             // panel1

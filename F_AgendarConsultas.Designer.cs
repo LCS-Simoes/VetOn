@@ -66,11 +66,14 @@
             // 
             // dgv_consultas
             // 
+            this.dgv_consultas.AllowUserToAddRows = false;
+            this.dgv_consultas.AllowUserToDeleteRows = false;
             this.dgv_consultas.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv_consultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_consultas.Location = new System.Drawing.Point(449, 12);
             this.dgv_consultas.MultiSelect = false;
             this.dgv_consultas.Name = "dgv_consultas";
+            this.dgv_consultas.ReadOnly = true;
             this.dgv_consultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_consultas.Size = new System.Drawing.Size(595, 469);
             this.dgv_consultas.TabIndex = 0;
@@ -216,8 +219,9 @@
             // 
             this.dtp_consulta.Location = new System.Drawing.Point(21, 245);
             this.dtp_consulta.Name = "dtp_consulta";
-            this.dtp_consulta.Size = new System.Drawing.Size(226, 20);
+            this.dtp_consulta.Size = new System.Drawing.Size(243, 20);
             this.dtp_consulta.TabIndex = 37;
+            this.dtp_consulta.Value = new System.DateTime(2025, 4, 29, 18, 11, 19, 0);
             // 
             // label16
             // 
