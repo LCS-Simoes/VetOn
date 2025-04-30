@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\VetOn\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|d:\\veton\\funcoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:funcoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|d:\\veton\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|D:\\VetOn\\f_agendarconsultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:f_agendarconsultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|d:\\veton\\utils\\funcoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:utils\\funcoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|d:\\veton\\f_agendarconsultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:f_agendarconsultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|d:\\veton\\forms\\f_agendarconsultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:forms\\f_agendarconsultas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|d:\\veton\\repositories\\agendamentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7976EA87-F5A5-4940-840A-48632290B0E3}|VetOn.csproj|solutionrelative:repositories\\agendamentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,50 +26,64 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "F_AgendarConsultas.cs",
-              "DocumentMoniker": "D:\\VetOn\\F_AgendarConsultas.cs",
-              "RelativeDocumentMoniker": "F_AgendarConsultas.cs",
-              "ToolTip": "D:\\VetOn\\F_AgendarConsultas.cs",
-              "RelativeToolTip": "F_AgendarConsultas.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowDgAAACqAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\VetOn\\Forms\\F_AgendarConsultas.cs",
+              "RelativeDocumentMoniker": "Forms\\F_AgendarConsultas.cs",
+              "ToolTip": "D:\\VetOn\\Forms\\F_AgendarConsultas.cs",
+              "RelativeToolTip": "Forms\\F_AgendarConsultas.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAMwD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T21:30:08.263Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Funcoes.cs",
-              "DocumentMoniker": "D:\\VetOn\\Funcoes.cs",
-              "RelativeDocumentMoniker": "Funcoes.cs",
-              "ToolTip": "D:\\VetOn\\Funcoes.cs",
-              "RelativeToolTip": "Funcoes.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAYwF4AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T20:13:04.068Z",
+              "Title": "Resources.resx",
+              "DocumentMoniker": "D:\\VetOn\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "Properties\\Resources.resx",
+              "ToolTip": "D:\\VetOn\\Properties\\Resources.resx",
+              "RelativeToolTip": "Properties\\Resources.resx",
+              "ViewState": "AgIAAGAAAAAAAAAAAAApwIIAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-04-30T00:31:27.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "F_AgendarConsultas.cs [Design]",
-              "DocumentMoniker": "D:\\VetOn\\F_AgendarConsultas.cs",
-              "RelativeDocumentMoniker": "F_AgendarConsultas.cs",
-              "ToolTip": "D:\\VetOn\\F_AgendarConsultas.cs [Design]",
-              "RelativeToolTip": "F_AgendarConsultas.cs [Design]",
+              "Title": "Funcoes.cs",
+              "DocumentMoniker": "D:\\VetOn\\Utils\\Funcoes.cs",
+              "RelativeDocumentMoniker": "Utils\\Funcoes.cs",
+              "ToolTip": "D:\\VetOn\\Utils\\Funcoes.cs",
+              "RelativeToolTip": "Utils\\Funcoes.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwFcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T22:56:26.917Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-30T00:26:52.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Agendamentos.cs",
+              "DocumentMoniker": "D:\\VetOn\\Repositories\\Agendamentos.cs",
+              "RelativeDocumentMoniker": "Repositories\\Agendamentos.cs",
+              "ToolTip": "D:\\VetOn\\Repositories\\Agendamentos.cs",
+              "RelativeToolTip": "Repositories\\Agendamentos.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T00:23:16.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             }
           ]
         }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VetOn.Repositories;
 
 namespace VetOn
 {
@@ -51,10 +52,14 @@ namespace VetOn
 
             if(cont > 0)
             {
-                searchID = dgv_consultas.Rows[dgv_consultas.SelectedRows[0].Index].Cells[0].Value.ToString();
-                //Corrigir posteriormente 
-                Funcoes.listarAgendas(searchID, tb_idcliente, tb_idanimal, tb_nomeanimal, tb_nomecliente, cb_horario, cb_nomeveterinario, mb_cpf, mb_celular, dtp_consulta);
+               searchID = dgv_consultas.Rows[dgv_consultas.SelectedRows[0].Index].Cells[0].Value.ToString();
+               Agendamentos.listarAgendas(searchID, tb_idcliente, tb_idanimal, tb_nomeanimal, tb_nomecliente, cb_horario, cb_nomeveterinario, mb_cpf, mb_celular, dtp_consulta);
             }
+        }
+
+        private void btn_agendar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

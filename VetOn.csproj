@@ -66,35 +66,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco.cs" />
-    <Compile Include="Funcoes.cs" />
-    <Compile Include="F_AgendarConsultas.cs">
+    <Compile Include="Repositories\Agendamentos.cs" />
+    <Compile Include="Utils\Funcoes.cs" />
+    <Compile Include="Forms\F_AgendarConsultas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_AgendarConsultas.Designer.cs">
+    <Compile Include="Forms\F_AgendarConsultas.Designer.cs">
       <DependentUpon>F_AgendarConsultas.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Principal.cs">
+    <Compile Include="Forms\F_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Principal.Designer.cs">
+    <Compile Include="Forms\F_Principal.Designer.cs">
       <DependentUpon>F_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Secretaria.cs">
+    <Compile Include="Forms\F_Secretaria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Secretaria.Designer.cs">
+    <Compile Include="Forms\F_Secretaria.Designer.cs">
       <DependentUpon>F_Secretaria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Globais.cs" />
+    <Compile Include="Utils\Globais.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="F_AgendarConsultas.resx">
+    <EmbeddedResource Include="Forms\F_AgendarConsultas.resx">
       <DependentUpon>F_AgendarConsultas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Principal.resx">
+    <EmbeddedResource Include="Forms\F_Principal.resx">
       <DependentUpon>F_Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Secretaria.resx">
+    <EmbeddedResource Include="Forms\F_Secretaria.resx">
       <DependentUpon>F_Secretaria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -122,13 +123,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\VetOn.png" />
+    <None Include="Resources\VetOn.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\light.png" />
+    <None Include="Resources\light.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\user.png" />
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -57,8 +57,9 @@
             this.lb_nomeusuario = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_addFoto = new System.Windows.Forms.Button();
+            this.btn_agendar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btn_remarcar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_consultas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -316,27 +317,39 @@
             this.panel1.Size = new System.Drawing.Size(1056, 27);
             this.panel1.TabIndex = 46;
             // 
-            // btn_addFoto
+            // btn_agendar
             // 
-            this.btn_addFoto.BackColor = System.Drawing.Color.MintCream;
-            this.btn_addFoto.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addFoto.Location = new System.Drawing.Point(21, 339);
-            this.btn_addFoto.Name = "btn_addFoto";
-            this.btn_addFoto.Size = new System.Drawing.Size(120, 25);
-            this.btn_addFoto.TabIndex = 47;
-            this.btn_addFoto.Text = "Agendar Consulta";
-            this.btn_addFoto.UseVisualStyleBackColor = false;
+            this.btn_agendar.BackColor = System.Drawing.Color.MintCream;
+            this.btn_agendar.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_agendar.Location = new System.Drawing.Point(21, 339);
+            this.btn_agendar.Name = "btn_agendar";
+            this.btn_agendar.Size = new System.Drawing.Size(120, 25);
+            this.btn_agendar.TabIndex = 47;
+            this.btn_agendar.Text = "Agendar Consulta";
+            this.btn_agendar.UseVisualStyleBackColor = false;
+            this.btn_agendar.Click += new System.EventHandler(this.btn_agendar_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(105)))), ((int)(((byte)(97)))));
             this.button1.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(147, 339);
+            this.button1.Location = new System.Drawing.Point(270, 339);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 25);
             this.button1.TabIndex = 48;
             this.button1.Text = "Desmarcar";
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btn_remarcar
+            // 
+            this.btn_remarcar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_remarcar.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_remarcar.Location = new System.Drawing.Point(147, 339);
+            this.btn_remarcar.Name = "btn_remarcar";
+            this.btn_remarcar.Size = new System.Drawing.Size(117, 25);
+            this.btn_remarcar.TabIndex = 49;
+            this.btn_remarcar.Text = "Remarcar";
+            this.btn_remarcar.UseVisualStyleBackColor = false;
             // 
             // F_AgendarConsultas
             // 
@@ -344,8 +357,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1056, 525);
+            this.Controls.Add(this.btn_remarcar);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_addFoto);
+            this.Controls.Add(this.btn_agendar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.tb_idanimal);
@@ -413,7 +427,8 @@
         public System.Windows.Forms.Label lb_nomeusuario;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_addFoto;
+        private System.Windows.Forms.Button btn_agendar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_remarcar;
     }
 }
