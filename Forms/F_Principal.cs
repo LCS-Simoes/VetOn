@@ -24,31 +24,35 @@ namespace VetOn
 
         private void VerificarNivel(string nivel)
         {
-            if(Globais.nivel == "secretaria")
+            if (Globais.nivel == "secretaria")
             {
-                
                 F_Secretaria f_secretaria = new F_Secretaria();
-                //Componentes extras
+
+                // Componentes extras
                 f_secretaria.lb_nomeusuario.Text = dt.Rows[0].Field<string>("t_nomeusuario");
                 f_secretaria.lb_nivelacesso.Text = nivel;
-                f_secretaria.ShowDialog();  
+
+                this.Hide(); 
+                f_secretaria.ShowDialog(); 
+                this.Close(); 
             }
             else if (Globais.nivel == "veterinaria")
             {
-
-            }else if(Globais.nivel == "farmacia")
-            {
-
-            }else if (Globais.nivel == "manutencao" )
-            {
-
-            }else
-            {
-                MessageBox.Show("Usuario incorreto ou não existe");
+               
             }
-
-
+            else if (Globais.nivel == "farmacia")
+            {
+              
+            }
+            else if (Globais.nivel == "manutencao")
+            {
+            }
+            else
+            {
+                MessageBox.Show("Usuário incorreto ou não existe");
+            }
         }
+
 
         private void btn_login_Click(object sender, EventArgs e)
         {
