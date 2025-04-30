@@ -53,12 +53,49 @@ namespace VetOn
             if(cont > 0)
             {
                searchID = dgv_consultas.Rows[dgv_consultas.SelectedRows[0].Index].Cells[0].Value.ToString();
-               Agendamentos.listarAgendas(searchID, tb_idcliente, tb_idanimal, tb_nomeanimal, tb_nomecliente, cb_horario, cb_nomeveterinario, mb_cpf, mb_celular, dtp_consulta);
+               AgendaRepository.listarAgendas(searchID, tb_idagenda, tb_idcliente, tb_idanimal, tb_nomeanimal, tb_nomecliente, cb_horario, cb_nomeveterinario, mb_cpf, mb_celular, dtp_consulta);
             }
         }
 
         private void btn_agendar_Click(object sender, EventArgs e)
         {
+            if(tb_idagenda.Text == "")
+            {
+                AgendaRepository.Agendar(tb_idcliente, tb_idanimal, cb_horario, cb_nomeveterinario, dtp_consulta);
+            }
+            else
+            {
+                MessageBox.Show("");
+            }
+        }
+
+        private void btn_remarcar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_desmarcar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_procurar_Click(object sender, EventArgs e)
+        {
+            AgendaRepository.Procurar(tb_nomecliente, tb_idcliente, mb_cpf, mb_celular, tb_idanimal, tb_nomeanimal);   
+        }
+
+        private void btn_limpar_Click(object sender, EventArgs e)
+        {
+            tb_idagenda.Clear();
+            tb_idcliente.Clear();
+            tb_nomecliente.Clear();
+            mb_celular.Clear();
+            mb_cpf.Clear();
+            tb_idanimal.Clear();
+            tb_nomeanimal.Clear();
+            tb_idconsulta.Clear();
+            cb_horario.Text = "";
+            cb_nomeveterinario.Text = "";
 
         }
     }

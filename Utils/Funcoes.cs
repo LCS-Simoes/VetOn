@@ -93,8 +93,6 @@ namespace VetOn
             {
                 return true;
             }
-        }
-
-        
+        } 
     }
 }
