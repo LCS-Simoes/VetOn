@@ -44,6 +44,11 @@ namespace VetOn
             dgv_consultas.Columns[3].Width = 140;
             dgv_consultas.Columns[4].Width = 100;
             dgv_consultas.Columns[5].Width = 90;
+            DataTable dt = Banco.dql("SELECT n_idveterinario, t_nomeveterinario FROM tb_veterinarios");
+            cb_nomeveterinario.DataSource = dt;
+            cb_nomeveterinario.DisplayMember = "t_nomeveterinario";
+            cb_nomeveterinario.ValueMember = "n_idveterinario";
+
         }
 
         private void dgv_consultas_SelectionChanged(object sender, EventArgs e)
@@ -63,6 +68,7 @@ namespace VetOn
             if(tb_idagenda.Text == "")
             {
                 AgendaRepository.Agendar(tb_idcliente, tb_idanimal, cb_horario, cb_nomeveterinario, dtp_consulta);
+                Banco.dql(vquery);
             }
             else
             {
@@ -72,9 +78,11 @@ namespace VetOn
 
         private void btn_remarcar_Click(object sender, EventArgs e)
         {
+            //Posteriormente fazer verificações de hora e data se já existem
             if (tb_idagenda.Text != null)
             {
                 AgendaRepository.Remarcar(tb_idagenda.Text, cb_nomeveterinario, dtp_consulta, cb_horario);
+                Banco.dql(vquery);
             }
             else
             {
