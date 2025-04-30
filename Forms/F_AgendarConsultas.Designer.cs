@@ -208,6 +208,22 @@
             // cb_horario
             // 
             this.cb_horario.FormattingEnabled = true;
+            this.cb_horario.Items.AddRange(new object[] {
+            "08:00",
+            "08:30",
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00"});
             this.cb_horario.Location = new System.Drawing.Point(14, 339);
             this.cb_horario.Name = "cb_horario";
             this.cb_horario.Size = new System.Drawing.Size(99, 21);

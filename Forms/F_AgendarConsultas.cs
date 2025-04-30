@@ -20,6 +20,7 @@ namespace VetOn
         public F_AgendarConsultas()
         {
             InitializeComponent();
+            lb_nivelacesso.Text = Globais.nivel;
         }
 
         private void F_AgendarConsultas_Load(object sender, EventArgs e)
@@ -65,17 +66,32 @@ namespace VetOn
             }
             else
             {
-                MessageBox.Show("");
+                MessageBox.Show("Ocorreu um erro tente novamente");
             }
         }
 
         private void btn_remarcar_Click(object sender, EventArgs e)
         {
-
+            if (tb_idagenda.Text != null)
+            {
+                AgendaRepository.Remarcar(tb_idagenda.Text, cb_nomeveterinario, dtp_consulta, cb_horario);
+            }
+            else
+            {
+                MessageBox.Show("Ocorreu um erro, verifique os campos ou tente novamente");
+            }
         }
 
         private void btn_desmarcar_Click(object sender, EventArgs e)
         {
+            if (AgendaRepository.Desmarcar(tb_idagenda.Text))
+            {
+                dgv_consultas.Rows.Remove(dgv_consultas.CurrentRow);
+            }
+            else
+            {
+                MessageBox.Show("Erro ao desmarcar");
+            }
 
         }
 
@@ -96,7 +112,6 @@ namespace VetOn
             tb_idconsulta.Clear();
             cb_horario.Text = "";
             cb_nomeveterinario.Text = "";
-
         }
     }
 }
