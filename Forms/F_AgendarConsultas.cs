@@ -23,6 +23,12 @@ namespace VetOn
             lb_nivelacesso.Text = Globais.nivel;
         }
 
+        /*
+         * Falta corrigir
+         * 1 - Verificar se já possui alguma consulta naquele dia e horario
+         * 2 - Arrumar o ID veterinario na hora do carregamento da page
+         */
+
         private void F_AgendarConsultas_Load(object sender, EventArgs e)
         {
   
@@ -39,7 +45,7 @@ namespace VetOn
             ORDER BY a.t_data";
             dgv_consultas.DataSource = Banco.dql(vquery);
             dgv_consultas.Columns[0].Width = 50;
-            dgv_consultas.Columns[1].Width = 70;
+            dgv_consultas.Columns[1].Width = 70;    
             dgv_consultas.Columns[2].Width = 50;
             dgv_consultas.Columns[3].Width = 140;
             dgv_consultas.Columns[4].Width = 100;
@@ -68,7 +74,7 @@ namespace VetOn
             if(tb_idagenda.Text == "")
             {
                 AgendaRepository.Agendar(tb_idcliente, tb_idanimal, cb_horario, cb_nomeveterinario, dtp_consulta);
-                Banco.dql(vquery);
+                dgv_consultas.DataSource = Banco.dql(vquery);
             }
             else
             {
@@ -82,7 +88,7 @@ namespace VetOn
             if (tb_idagenda.Text != null)
             {
                 AgendaRepository.Remarcar(tb_idagenda.Text, cb_nomeveterinario, dtp_consulta, cb_horario);
-                Banco.dql(vquery);
+                dgv_consultas.DataSource = Banco.dql(vquery);
             }
             else
             {

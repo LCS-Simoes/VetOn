@@ -40,8 +40,6 @@
             this.tb_idcliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_nomeveterinario = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tb_idconsulta = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cb_horario = new System.Windows.Forms.ComboBox();
@@ -155,7 +153,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(127, 219);
+            this.label1.Location = new System.Drawing.Point(12, 215);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 28;
@@ -164,28 +162,10 @@
             // cb_nomeveterinario
             // 
             this.cb_nomeveterinario.FormattingEnabled = true;
-            this.cb_nomeveterinario.Location = new System.Drawing.Point(130, 236);
+            this.cb_nomeveterinario.Location = new System.Drawing.Point(15, 232);
             this.cb_nomeveterinario.Name = "cb_nomeveterinario";
-            this.cb_nomeveterinario.Size = new System.Drawing.Size(233, 21);
+            this.cb_nomeveterinario.Size = new System.Drawing.Size(263, 21);
             this.cb_nomeveterinario.TabIndex = 29;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 218);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "ID Consulta";
-            // 
-            // tb_idconsulta
-            // 
-            this.tb_idconsulta.Location = new System.Drawing.Point(14, 236);
-            this.tb_idconsulta.Name = "tb_idconsulta";
-            this.tb_idconsulta.ReadOnly = true;
-            this.tb_idconsulta.Size = new System.Drawing.Size(85, 20);
-            this.tb_idconsulta.TabIndex = 30;
-            this.tb_idconsulta.TabStop = false;
             // 
             // label7
             // 
@@ -438,8 +418,6 @@
             this.Controls.Add(this.cb_horario);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tb_idconsulta);
             this.Controls.Add(this.cb_nomeveterinario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mb_celular);
@@ -478,8 +456,6 @@
         private System.Windows.Forms.TextBox tb_idcliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_nomeveterinario;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_idconsulta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cb_horario;

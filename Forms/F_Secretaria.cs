@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
+using VetOn.Forms;
 
 namespace VetOn
 {
@@ -110,6 +111,15 @@ namespace VetOn
             f_agendar.lb_nomeusuario.Text = nome;
             f_agendar.Show();
         }
+
+        private void verificarConsultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_VerificarConsultas f_verificarConsultas = new F_VerificarConsultas();
+            string nome = lb_nomeusuario.Text;
+            f_verificarConsultas.lb_nomeusuario.Text = nome;
+            f_verificarConsultas.Show();
+        }
+
 
         //Funções Buttons
         private void btn_novoanimal_Click(object sender, EventArgs e)
@@ -371,10 +381,7 @@ namespace VetOn
              pb_animal.ImageLocation = destinoCompleto;    
         }
 
-        private void verificarConsultasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         //OBSERVÃÇÕES CLASSES --> Atualizar todos os SQL depois para um repository para cada classe 
     }
 }
