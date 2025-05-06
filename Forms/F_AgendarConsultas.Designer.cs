@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_AgendarConsultas));
-            this.dgv_consultas = new System.Windows.Forms.DataGridView();
             this.mb_celular = new System.Windows.Forms.MaskedTextBox();
             this.mb_cpf = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,25 +61,11 @@
             this.tb_idagenda = new System.Windows.Forms.TextBox();
             this.btn_procurar = new System.Windows.Forms.Button();
             this.btn_limpar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_consultas)).BeginInit();
+            this.dgv_consultas = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_consultas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgv_consultas
-            // 
-            this.dgv_consultas.AllowUserToAddRows = false;
-            this.dgv_consultas.AllowUserToDeleteRows = false;
-            this.dgv_consultas.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgv_consultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_consultas.Location = new System.Drawing.Point(449, 12);
-            this.dgv_consultas.MultiSelect = false;
-            this.dgv_consultas.Name = "dgv_consultas";
-            this.dgv_consultas.ReadOnly = true;
-            this.dgv_consultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_consultas.Size = new System.Drawing.Size(595, 469);
-            this.dgv_consultas.TabIndex = 0;
-            this.dgv_consultas.SelectionChanged += new System.EventHandler(this.dgv_consultas_SelectionChanged);
             // 
             // mb_celular
             // 
@@ -395,6 +380,21 @@
             this.btn_limpar.UseVisualStyleBackColor = false;
             this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
+            // dgv_consultas
+            // 
+            this.dgv_consultas.AllowUserToAddRows = false;
+            this.dgv_consultas.AllowUserToDeleteRows = false;
+            this.dgv_consultas.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgv_consultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_consultas.Location = new System.Drawing.Point(449, 12);
+            this.dgv_consultas.MultiSelect = false;
+            this.dgv_consultas.Name = "dgv_consultas";
+            this.dgv_consultas.ReadOnly = true;
+            this.dgv_consultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_consultas.Size = new System.Drawing.Size(595, 469);
+            this.dgv_consultas.TabIndex = 0;
+            this.dgv_consultas.SelectionChanged += new System.EventHandler(this.dgv_consultas_SelectionChanged);
+            // 
             // F_AgendarConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,18 +434,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas";
             this.Load += new System.EventHandler(this.F_AgendarConsultas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_consultas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_consultas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgv_consultas;
         private System.Windows.Forms.MaskedTextBox mb_celular;
         private System.Windows.Forms.MaskedTextBox mb_cpf;
         private System.Windows.Forms.Label label6;
@@ -478,5 +476,6 @@
         private System.Windows.Forms.TextBox tb_idagenda;
         private System.Windows.Forms.Button btn_procurar;
         private System.Windows.Forms.Button btn_limpar;
+        private System.Windows.Forms.DataGridView dgv_consultas;
     }
 }

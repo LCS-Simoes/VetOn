@@ -123,7 +123,6 @@ namespace VetOn
             mb_cpf.Clear();
             tb_idanimal.Clear();
             tb_nomeanimal.Clear();
-            tb_idconsulta.Clear();
             cb_horario.Text = "";
             cb_nomeveterinario.Text = "";
         }

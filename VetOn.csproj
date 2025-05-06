@@ -76,6 +76,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Repositories\ConsultaRepository.cs" />
+    <Compile Include="Repositories\SecretariaRepository.cs" />
     <Compile Include="Utils\Funcoes.cs" />
     <Compile Include="Forms\F_AgendarConsultas.cs">
       <SubType>Form</SubType>

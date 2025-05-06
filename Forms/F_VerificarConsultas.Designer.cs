@@ -54,8 +54,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_idconsulta = new System.Windows.Forms.TextBox();
+            this.tb_fila = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,7 +72,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 489);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(951, 32);
+            this.panel1.Size = new System.Drawing.Size(1074, 32);
             this.panel1.TabIndex = 0;
             // 
             // lb_nivelacesso
@@ -139,13 +139,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_vConsulta.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_vConsulta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_vConsulta.Size = new System.Drawing.Size(476, 471);
+            this.dgv_vConsulta.Size = new System.Drawing.Size(604, 471);
             this.dgv_vConsulta.TabIndex = 1;
             this.dgv_vConsulta.SelectionChanged += new System.EventHandler(this.dgv_vConsulta_SelectionChanged);
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(929, 11);
+            this.vScrollBar1.Location = new System.Drawing.Point(1057, 12);
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.Size = new System.Drawing.Size(10, 472);
             this.vScrollBar1.TabIndex = 2;
@@ -295,23 +295,23 @@
             this.label7.TabIndex = 68;
             this.label7.Text = "ID Consulta";
             // 
-            // textBox1
+            // tb_idconsulta
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 326);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(85, 20);
-            this.textBox1.TabIndex = 67;
-            this.textBox1.TabStop = false;
+            this.tb_idconsulta.Location = new System.Drawing.Point(13, 326);
+            this.tb_idconsulta.Name = "tb_idconsulta";
+            this.tb_idconsulta.ReadOnly = true;
+            this.tb_idconsulta.Size = new System.Drawing.Size(85, 20);
+            this.tb_idconsulta.TabIndex = 67;
+            this.tb_idconsulta.TabStop = false;
             // 
-            // textBox2
+            // tb_fila
             // 
-            this.textBox2.Location = new System.Drawing.Point(127, 326);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(85, 20);
-            this.textBox2.TabIndex = 69;
-            this.textBox2.TabStop = false;
+            this.tb_fila.Location = new System.Drawing.Point(127, 326);
+            this.tb_fila.Name = "tb_fila";
+            this.tb_fila.ReadOnly = true;
+            this.tb_fila.Size = new System.Drawing.Size(85, 20);
+            this.tb_fila.TabIndex = 69;
+            this.tb_fila.TabStop = false;
             // 
             // label8
             // 
@@ -327,11 +327,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(951, 521);
+            this.ClientSize = new System.Drawing.Size(1074, 521);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tb_fila);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_idconsulta);
             this.Controls.Add(this.cb_status);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cb_nomeveterinario);
@@ -350,7 +350,9 @@
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.dgv_vConsulta);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "F_VerificarConsultas";
             this.Text = "Consultas Diaria";
             this.Load += new System.EventHandler(this.F_VerificarConsultas_Load);
@@ -389,8 +391,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cb_status;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_idconsulta;
+        private System.Windows.Forms.TextBox tb_fila;
         private System.Windows.Forms.Label label8;
     }
 }
