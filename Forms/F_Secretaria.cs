@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
 using VetOn.Forms;
+using VetOn.Repositories;
 
 namespace VetOn
 {
@@ -19,7 +20,7 @@ namespace VetOn
 
         Funcoes funcoes = new Funcoes();
         //Variaveis
-        string query = "";
+        //string query = "";
         string vquery = "";
         string searchID;
         string origemCompleto = "";
@@ -51,38 +52,16 @@ namespace VetOn
             DataGridView dgv = (DataGridView)sender; 
             int cont = dgv.SelectedRows.Count;
 
-
             if(cont > 0)
             {
-                DataTable dt = new DataTable();
-                searchID = dgv_clientes.Rows[dgv_clientes.SelectedRows[0].Index].Cells[0].Value.ToString();
-                query = @"SELECT * FROM tb_clientes WHERE n_idcliente=" + searchID;
-                dt = Banco.dql(query);
-
-                tb_idcliente.Text = dt.Rows[0].Field<Int64>("n_idcliente").ToString();
-                tb_nomecliente.Text = dt.Rows[0].Field<string>("t_nomecliente");
-                tb_rua.Text = dt.Rows[0].Field<string>("t_rua");
-                tb_cidade.Text = dt.Rows[0].Field<string>("t_cidade");
-                tb_bairro.Text = dt.Rows[0].Field<string>("t_bairro");
-                mb_celular.Text = dt.Rows[0].Field<string>("t_telefone");
-                mb_cep.Text = dt.Rows[0].Field<string>("t_cep");
-                mb_cpf.Text = dt.Rows[0].Field<string>("t_cpf");
-                np_numero.Value = dt.Rows[0].Field<Int64>("n_numerocasa");
-
-
-                DataTable dtAnimal = Banco.dql(@"SELECT * FROM tb_animais WHERE n_idcliente =" + searchID);
-                if (dtAnimal.Rows.Count > 0)
+                searchID = dgv_clientes.Rows[dgv_clientes.SelectedRows[0].Index].Cells[0].Value.ToString(); 
+                SecretariaRepository.listarClientes(searchID, tb_idcliente, tb_nomecliente, tb_rua, tb_cidade, tb_bairro, mb_celular, mb_cep, mb_cpf, np_numero);
+                if (SecretariaRepository.listarAnimais(searchID, tb_idanimal, tb_nomeanimal, tb_especieanimal, tb_racaanimal, cb_generoanimal, np_idadeanimal, pb_animal))
                 {
-                    tb_idanimal.Text = dtAnimal.Rows[0].Field<Int64>("n_idanimal").ToString();
-                    tb_nomeanimal.Text = dtAnimal.Rows[0].Field<string>("t_nomeanimal");
-                    tb_especieanimal.Text = dtAnimal.Rows[0].Field<string>("t_especie");
-                    tb_racaanimal.Text = dtAnimal.Rows[0].Field<string>("t_raca");
-                    cb_generoanimal.Text = dtAnimal.Rows[0].Field<string>("t_genero");
-                    np_idadeanimal.Value = dtAnimal.Rows[0].Field<Int64>("n_idade");
-                    pb_animal.ImageLocation = dtAnimal.Rows[0].Field<string>("t_fotos");
+                    //Apenas para o uso do IF ELSE
                 }
-                else {
-                    //Otimizar
+                else
+                {
                     tb_idanimal.Clear();
                     tb_nomeanimal.Clear();
                     tb_especieanimal.Clear();
@@ -160,38 +139,14 @@ namespace VetOn
             ValidacoesClientes();
             if(tb_idcliente.Text == "")
             {
-                query = String.Format(@"INSERT INTO tb_clientes (t_nomecliente, t_cpf, t_telefone, t_cep, n_numerocasa, t_rua, t_cidade, t_bairro) VALUES ('{0}','{1}','{2}','{3}',{4},'{5}','{6}','{7}')",
-                tb_nomecliente.Text,
-                mb_cpf.Text,
-                mb_celular.Text,
-                mb_cep.Text,
-                np_numero.Value,
-                tb_rua.Text,
-                tb_cidade.Text,
-                tb_bairro.Text
-                );
-                MessageBox.Show("Novo Cliente Cadastrado");
+                SecretariaRepository.cadastrarCliente(tb_nomecliente, mb_cpf, mb_celular, mb_cep, np_numero, tb_rua, tb_cidade, tb_bairro);
             }
             else
             {
-                query = String.Format(@"UPDATE tb_clientes SET t_nomecliente='{0}', t_cpf='{1}', t_telefone='{2}', t_cep='{3}', n_numerocasa={4}, t_rua='{5}', t_cidade='{6}', t_bairro='{7}' WHERE n_idcliente={8}",
-                tb_nomecliente.Text,
-                mb_cpf.Text,
-                mb_celular.Text,
-                mb_cep.Text,
-                np_numero.Value,
-                tb_rua.Text,
-                tb_cidade.Text,
-                tb_bairro.Text,
-                searchID
-                );
+                SecretariaRepository.atualizarCliente(searchID, tb_nomecliente, mb_cpf, mb_celular, mb_cep, np_numero, tb_rua, tb_cidade, tb_bairro);
                 atualizou = 1;
-
-                MessageBox.Show("Cliente atualizado");
             }
-            Banco.dml(query);
             int linha = dgv_clientes.SelectedRows[0].Index;
-
             if(atualizou == 1)
             {
                 dgv_clientes[1, linha].Value = tb_nomecliente.Text;
@@ -234,38 +189,15 @@ namespace VetOn
                 cb_generoanimal.Text = "F";
             }
 
-
             if (tb_idanimal.Text == "")
             {
-                query = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie, t_fotos)
-                VALUES ({0},'{1}','{2}',{3},'{4}','{5}', '{6}')",
-                tb_idcliente.Text,
-                tb_nomeanimal.Text,
-                tb_racaanimal.Text,
-                np_idadeanimal.Value,
-                cb_generoanimal.Text,
-                tb_especieanimal.Text,
-                destinoCompleto
-                );
-                MessageBox.Show("Animal Cadastrado");
+                SecretariaRepository.cadastrarAnimal(tb_idcliente, tb_nomeanimal, tb_racaanimal, np_idadeanimal, cb_generoanimal, tb_especieanimal, destinoCompleto);
             }
             else
             {
-                query = String.Format(@"UPDATE tb_animais SET t_nomeanimal='{0}', t_raca='{1}', n_idade={2}, t_genero='{3}', t_especie='{4}', t_fotos='{5}', n_idcliente={6} WHERE n_idanimal={7}",
-                tb_nomeanimal.Text,
-                tb_racaanimal.Text,
-                np_idadeanimal.Value,
-                cb_generoanimal.Text,
-                tb_especieanimal.Text,
-                destinoCompleto,
-                tb_idcliente.Text,
-                tb_idanimal.Text
-                );
+                SecretariaRepository.atualizarAnimal(tb_idcliente,tb_nomeanimal, tb_racaanimal, np_idadeanimal, cb_generoanimal, tb_especieanimal, destinoCompleto, tb_idanimal);
                 atualizou = 1;
-                MessageBox.Show("Animal atualizado");
             }
-            Banco.dml(query);
-
             int linha = dgv_clientes.SelectedRows[0].Index;
 
             if (atualizou == 1)
@@ -338,7 +270,7 @@ namespace VetOn
 
                         //Inserindo Animal com o ID do cliente 
                         string inserirAnimal = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie, t_fotos)
-                    VALUES ({0},'{1}','{2}',{3},'{4}','{5}','{6}')",
+                        VALUES ({0},'{1}','{2}',{3},'{4}','{5}','{6}')",
                         idCliente,
                         tb_nomeanimal.Text,
                         tb_racaanimal.Text,

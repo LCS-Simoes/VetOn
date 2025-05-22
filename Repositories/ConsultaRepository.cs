@@ -38,30 +38,42 @@ namespace VetOn.Repositories
             tb_nomeanimal.Text = dt.Rows[0].Field<string>("t_nomeanimal");
 
             //Consulta
-            //cb_horario.Text = dt.Rows[0].Field<string>("t_horario");
+            //cb_horario.Text = dt.Rows[0].Field<string>("t_horario"); ADICIONAR
             cb_nomeveterinario.SelectedValue = dt.Rows[0].Field<Int64>("n_idveterinario");
             cb_status.Text = dt.Rows[0].Field<string>("t_status");
 
+
+            /* BLOCO DANDO CONFLITO
             if (cb_status.Text == "Presente")
             {
+                string queryConsult = "SELECT n_idconsulta FROM tb_consultas WHERE n_idanimal =" + tb_idanimal.Text;
+                dt = Banco.dql(queryConsult);
+
                 tb_idconsulta.Text = dt.Rows[0].Field<Int64>("n_idconsulta").ToString();
             }
             else
             {
+                tb_idanimal.Text = "";
                 return;
             }
+            */
+
         }
 
-
-        public static void CriarConsulta(string searchID, ComboBox tb_status)
+        public static void CriarConsulta(string searchID, ComboBox tb_status, ComboBox cb_nomeveterinario, TextBox tb_nomeanimal, TextBox tb_idanimal)
         {
             string query = String.Format(@"UPDATE tb_agenda SET t_status='{0}' WHERE n_idagenda={1}",
-            tb_status,
+            tb_status.Text,
             searchID
             );
             Banco.dml(query);
-            MessageBox.Show("Consulta confirmada");
-    
+
+            query = String.Format(@"INSERT INTO tb_consultas (n_idanimal, n_idveterinario, t_nomeanimal) VALUES ({0},{1},'{2}')",
+            tb_idanimal.Text,
+            cb_nomeveterinario.SelectedValue,
+            tb_nomeanimal.Text
+            );
+            Banco.dml(query);
         }
 
     }

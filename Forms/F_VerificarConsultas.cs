@@ -6,6 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VetOn.Repositories;
@@ -49,6 +50,14 @@ namespace VetOn.Forms
             dgv_vConsulta.Columns[4].Width = 140;
             dgv_vConsulta.Columns[5].Width = 100;
             dgv_vConsulta.Columns[6].Width = 90;
+
+
+            //Corrigir
+            DataTable dt = Banco.dql("SELECT n_idveterinario, t_nomeveterinario FROM tb_veterinarios");
+            cb_nomeveterinario.DataSource = dt;
+            cb_nomeveterinario.DisplayMember = "t_nomeveterinario";
+            cb_nomeveterinario.ValueMember = "n_idveterinario";
+
         }
 
         private void dgv_vConsulta_SelectionChanged(object sender, EventArgs e)
@@ -68,12 +77,19 @@ namespace VetOn.Forms
             if(cb_status.Text == "Presente")
             {
                 searchID = dgv_vConsulta.Rows[dgv_vConsulta.SelectedRows[0].Index].Cells[0].Value.ToString();
-                ConsultaRepository.CriarConsulta(searchID, cb_status); //corrigir
+                ConsultaRepository.CriarConsulta(searchID, cb_status, cb_nomeveterinario, tb_nomeanimal, tb_idanimal); 
                 dgv_vConsulta.DataSource = Banco.dql(vquery);
             }
-            else
+            else if(cb_status.Text == "Atrasado")
+            {
+                //Reliazar depois
+            }
+            else if(cb_status.Text == "Não compareceu")
             {
 
+            }else
+            {
+                //Talvez seja redundante a ideia
             }
         }
 
