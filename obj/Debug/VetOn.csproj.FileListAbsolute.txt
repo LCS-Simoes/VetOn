@@ -20,3 +20,4 @@ D:\VetOn\obj\Debug\VetOn.csproj.Up2Date
 D:\VetOn\obj\Debug\VetOn.F_Secretaria.resources
 D:\VetOn\obj\Debug\VetOn.F_AgendarConsultas.resources
 D:\VetOn\obj\Debug\VetOn.Forms.F_VerificarConsultas.resources
+D:\VetOn\obj\Debug\VetOn.Forms.F_Manutencao.resources

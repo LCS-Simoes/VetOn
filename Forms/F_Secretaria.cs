@@ -73,8 +73,7 @@ namespace VetOn
                 }
             }
         }
-
-        //Validações -- Otimizar depois ou passar para classe Funções
+        
         private void ValidacoesClientes()
         {
             bool resultadoCPF = funcoes.ValidarCPF(mb_cpf.Text);
@@ -212,90 +211,35 @@ namespace VetOn
             }
         }
 
+
+        //Prestar atenção depois
         private void btn_cadastrargeral_Click(object sender, EventArgs e)
         {
-            
-            if(tb_idanimal.Text == "" && tb_idcliente.Text == "")
+            if (tb_idanimal.Text == "" && tb_idcliente.Text == "")
             {
-                //Solução PROVISÓRIA
-                try
+                if (destinoCompleto == "")
                 {
-                    string inserirCliente = String.Format(@"INSERT INTO tb_clientes (t_nomecliente, t_cpf, t_telefone, t_cep, n_numerocasa, t_rua, t_cidade, t_bairro)
-                    VALUES ('{0}','{1}','{2}','{3}',{4},'{5}','{6}','{7}');
-                    SELECT SCOPE_IDENTITY()",
-                    tb_nomecliente.Text,
-                    mb_cpf.Text,
-                    mb_celular.Text,
-                    mb_cep.Text,
-                    np_numero.Value,
-                    tb_rua.Text,
-                    tb_cidade.Text,
-                    tb_bairro.Text
-                    );
-
-                    //Jeito de recuperar o ID do cliente criado
-                    object result = Banco.getScalar(inserirCliente);
-                    int idCliente = Convert.ToInt32(result);
-
-
-                    //Verificação de fotos
-                    if (destinoCompleto == "")
+                    if (MessageBox.Show("Sem foto selecionada, deseja continuar?", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
+                }
+                if (destinoCompleto != "")
+                {
+                    System.IO.File.Copy(origemCompleto, destinoCompleto, true);
+                    if (File.Exists(destinoCompleto))
                     {
-                        if (MessageBox.Show("Sem foto selecionada, deseja continuar?", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
-                    }
-                    if (destinoCompleto != "")
-                    {
-                        System.IO.File.Copy(origemCompleto,destinoCompleto, true);
-                        if (File.Exists(destinoCompleto))
-                        {
-                            pb_animal.ImageLocation = destinoCompleto;
-                        }
-                        else
-                        {
-                            if (MessageBox.Show("Erro ao localizar foto, deseja continuar", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
-                        }
-
-                    }
-
-                    //Validação provisoria
-                    if(cb_generoanimal.Text == "Macho")
-                    {
-                        cb_generoanimal.Text = "M";
+                        pb_animal.ImageLocation = destinoCompleto;
                     }
                     else
                     {
-                        cb_generoanimal.Text = "F";
+                        if (MessageBox.Show("Erro ao localizar foto, deseja continuar", "ERRO", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
                     }
-
-
-                        //Inserindo Animal com o ID do cliente 
-                        string inserirAnimal = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie, t_fotos)
-                        VALUES ({0},'{1}','{2}',{3},'{4}','{5}','{6}')",
-                        idCliente,
-                        tb_nomeanimal.Text,
-                        tb_racaanimal.Text,
-                        np_idadeanimal.Value,
-                        cb_generoanimal.Text,
-                        tb_especieanimal.Text,
-                        destinoCompleto
-                        );
-
-                    Banco.dml(inserirAnimal);
-                    dgv_clientes.DataSource = Banco.dql(vquery);
-                    MessageBox.Show("Cliente e animal cadastrados com sucesso!");
-
-
-                }catch(Exception ex)
-                {
-                    MessageBox.Show("Erro ao cadastrar: " + ex.Message);
                 }
-
+                SecretariaRepository.cadastroGeral(tb_nomecliente, mb_cpf, mb_celular, mb_cep, np_numero, tb_rua, tb_cidade, tb_bairro, tb_idcliente, 
+                tb_nomeanimal, tb_racaanimal, np_idadeanimal, cb_generoanimal, tb_especieanimal, destinoCompleto);
             }else
             {
-                MessageBox.Show("Impossível realizar ação: cliente ou animal já existem");
+                MessageBox.Show("Impossível realizar ação: cliente ou animal seus campos preenchidos");
             }
         }
-
         private void btn_addFoto_Click(object sender, EventArgs e)
         {
         
@@ -312,8 +256,5 @@ namespace VetOn
             }
              pb_animal.ImageLocation = destinoCompleto;    
         }
-
-        
-        //OBSERVÃÇÕES CLASSES --> Atualizar todos os SQL depois para um repository para cada classe 
     }
 }

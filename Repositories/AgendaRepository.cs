@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace VetOn.Repositories
 {
-    internal class AgendaRepository : Form
+    internal class AgendaRepository 
     {
         
         static string globalQuery = ""; 

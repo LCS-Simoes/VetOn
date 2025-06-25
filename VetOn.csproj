@@ -66,21 +66,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco.cs" />
+    <Compile Include="Forms\F_Manutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_Manutencao.Designer.cs">
+      <DependentUpon>F_Manutencao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\F_VerificarConsultas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\F_VerificarConsultas.Designer.cs">
       <DependentUpon>F_VerificarConsultas.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Veterinaria.cs">
+    <Compile Include="Forms\F_Veterinaria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Veterinaria.Designer.cs">
+    <Compile Include="Forms\F_Veterinaria.Designer.cs">
       <DependentUpon>F_Veterinaria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\AgendaRepository.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Repositories\AgendaRepository.cs" />
     <Compile Include="Repositories\ConsultaRepository.cs" />
     <Compile Include="Repositories\SecretariaRepository.cs" />
     <Compile Include="Repositories\VeterinariaRepository.cs" />
@@ -108,6 +112,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\F_AgendarConsultas.resx">
       <DependentUpon>F_AgendarConsultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_Manutencao.resx">
+      <DependentUpon>F_Manutencao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Principal.resx">
       <DependentUpon>F_Principal.cs</DependentUpon>
@@ -150,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manunteção1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

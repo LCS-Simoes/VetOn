@@ -122,5 +122,63 @@ namespace VetOn.Repositories
             Banco.dql(query);
             MessageBox.Show("Animal atualizado");
         }
+        //Corrigir bug no cadastro geral
+        public static void cadastroGeral(TextBox tb_nomecliente, MaskedTextBox mb_cpf, MaskedTextBox mb_celular, MaskedTextBox mb_cep, NumericUpDown np_numero,
+        TextBox tb_rua, TextBox tb_cidade, TextBox tb_bairro, TextBox tb_idcliente, TextBox tb_nomeanimal, TextBox tb_racaanimal, NumericUpDown np_idadeanimal, 
+        ComboBox cb_generoanimal, TextBox tb_especieanimal, string destinoCompleto)
+        {
+            try
+            {
+
+                // ---- PARTE DOS CLIENTES --- // 
+
+                string inserirCliente = String.Format(@"INSERT INTO tb_clientes (t_nomecliente, t_cpf, t_telefone, t_cep, n_numerocasa, t_rua, t_cidade, t_bairro)
+                VALUES ('{0}','{1}','{2}','{3}',{4},'{5}','{6}','{7}');
+                SELECT SCOPE_IDENTITY()",
+                tb_nomecliente.Text,
+                mb_cpf.Text,
+                mb_celular.Text,
+                mb_cep.Text,
+                np_numero.Value,
+                tb_rua.Text,
+                tb_cidade.Text,
+                tb_bairro.Text
+                );
+
+                object result = Banco.getScalar(inserirCliente);
+                int idCliente = Convert.ToInt32(result);
+
+                // --- REFATORAÇÃO DO CAMPO --- //
+                if (cb_generoanimal.Text == "Macho")
+                {
+                    cb_generoanimal.Text = "M";
+                }
+                else
+                {
+                    cb_generoanimal.Text = "F";
+                }
+
+                // --- PARTE DOS ANIMAIS === //
+                string inserirAnimal = String.Format(@"INSERT INTO tb_animais (n_idcliente, t_nomeanimal, t_raca, n_idade, t_genero, t_especie, t_fotos)
+                VALUES ({0},'{1}','{2}',{3},'{4}','{5}','{6}')",
+                idCliente,
+                tb_nomeanimal.Text,
+                tb_racaanimal.Text,
+                np_idadeanimal.Value,
+                cb_generoanimal.Text,
+                tb_especieanimal.Text,
+                destinoCompleto
+                );
+                Banco.dml(inserirAnimal);
+                MessageBox.Show("Cliente e animal cadastrados com sucesso!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar: "+ ex.Message);
+            }
+
+        }
+
     }
 }

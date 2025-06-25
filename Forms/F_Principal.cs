@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VetOn.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace VetOn
@@ -46,7 +47,17 @@ namespace VetOn
             }
             else if (Globais.nivel == "manutencao")
             {
+                F_Manutencao f_manutencao = new F_Manutencao();
+                f_manutencao.lb_nome.Text = dt.Rows[0].Field<string>("t_nomeusuario");
+
+                this.Hide();
+                f_manutencao.ShowDialog();
+                this.Close();
             }
+            else if (Globais.nivel == "gerente")
+            {
+            }
+
             else
             {
                 MessageBox.Show("Usuário incorreto ou não existe");
