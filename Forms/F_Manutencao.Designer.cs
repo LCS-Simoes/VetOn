@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Manutencao));
             this.pb_manutencao = new System.Windows.Forms.PictureBox();
             this.lb_saudacoes = new System.Windows.Forms.Label();
@@ -41,22 +42,24 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dgv_usuarios = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_nome = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_senha = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btn_login = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.cb_categoria = new System.Windows.Forms.ComboBox();
+            this.btn_cadastro = new System.Windows.Forms.Button();
+            this.btn_remover = new System.Windows.Forms.Button();
+            this.btn_limpar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cb_status = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tb_username = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_manutencao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).BeginInit();
             this.SuspendLayout();
@@ -170,17 +173,28 @@
             this.dgv_usuarios.BackgroundColor = System.Drawing.Color.Thistle;
             this.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_usuarios.Location = new System.Drawing.Point(356, 12);
+            this.dgv_usuarios.MultiSelect = false;
             this.dgv_usuarios.Name = "dgv_usuarios";
             this.dgv_usuarios.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_usuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_usuarios.Size = new System.Drawing.Size(313, 397);
             this.dgv_usuarios.TabIndex = 15;
+            this.dgv_usuarios.SelectionChanged += new System.EventHandler(this.dgv_usuarios_SelectionChanged);
             // 
-            // textBox1
+            // tb_nome
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 20);
-            this.textBox1.TabIndex = 16;
+            this.tb_nome.Location = new System.Drawing.Point(16, 66);
+            this.tb_nome.Name = "tb_nome";
+            this.tb_nome.Size = new System.Drawing.Size(214, 20);
+            this.tb_nome.TabIndex = 16;
             // 
             // label8
             // 
@@ -194,68 +208,77 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 108);
+            this.label9.Location = new System.Drawing.Point(14, 147);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 13);
             this.label9.TabIndex = 18;
             this.label9.Text = "Senha do Usuario";
             // 
-            // textBox2
+            // tb_senha
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 124);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
-            this.textBox2.TabIndex = 19;
+            this.tb_senha.Location = new System.Drawing.Point(18, 163);
+            this.tb_senha.Name = "tb_senha";
+            this.tb_senha.Size = new System.Drawing.Size(158, 20);
+            this.tb_senha.TabIndex = 19;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(198, 108);
+            this.label10.Location = new System.Drawing.Point(200, 147);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 13);
             this.label10.TabIndex = 20;
             this.label10.Text = "Categoria";
             // 
-            // comboBox1
+            // cb_categoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(201, 123);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 21;
+            this.cb_categoria.FormattingEnabled = true;
+            this.cb_categoria.Items.AddRange(new object[] {
+            "S",
+            "V",
+            "M",
+            "G",
+            "F"});
+            this.cb_categoria.Location = new System.Drawing.Point(203, 162);
+            this.cb_categoria.Name = "cb_categoria";
+            this.cb_categoria.Size = new System.Drawing.Size(121, 21);
+            this.cb_categoria.TabIndex = 21;
             // 
-            // btn_login
+            // btn_cadastro
             // 
-            this.btn_login.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btn_login.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_login.Location = new System.Drawing.Point(4, 387);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(107, 22);
-            this.btn_login.TabIndex = 22;
-            this.btn_login.Text = "Cadastrar Usuário";
-            this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_cadastro.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btn_cadastro.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadastro.Location = new System.Drawing.Point(4, 387);
+            this.btn_cadastro.Name = "btn_cadastro";
+            this.btn_cadastro.Size = new System.Drawing.Size(107, 22);
+            this.btn_cadastro.TabIndex = 22;
+            this.btn_cadastro.Text = "Cadastrar Usuário";
+            this.btn_cadastro.UseVisualStyleBackColor = false;
+            this.btn_cadastro.Click += new System.EventHandler(this.btn_cadastro_Click);
             // 
-            // button3
+            // btn_remover
             // 
-            this.button3.BackColor = System.Drawing.Color.LavenderBlush;
-            this.button3.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(123, 387);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 22);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Remover Usuário";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_remover.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btn_remover.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_remover.Location = new System.Drawing.Point(123, 387);
+            this.btn_remover.Name = "btn_remover";
+            this.btn_remover.Size = new System.Drawing.Size(107, 22);
+            this.btn_remover.TabIndex = 23;
+            this.btn_remover.Text = "Remover Usuário";
+            this.btn_remover.UseVisualStyleBackColor = false;
+            this.btn_remover.Click += new System.EventHandler(this.btn_remover_Click);
             // 
-            // button4
+            // btn_limpar
             // 
-            this.button4.BackColor = System.Drawing.Color.LavenderBlush;
-            this.button4.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(243, 387);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 22);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Limpar Campos";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_limpar.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btn_limpar.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_limpar.Location = new System.Drawing.Point(243, 387);
+            this.btn_limpar.Name = "btn_limpar";
+            this.btn_limpar.Size = new System.Drawing.Size(107, 22);
+            this.btn_limpar.TabIndex = 24;
+            this.btn_limpar.Text = "Limpar Campos";
+            this.btn_limpar.UseVisualStyleBackColor = false;
+            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // label11
             // 
@@ -269,7 +292,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 167);
+            this.label12.Location = new System.Drawing.Point(14, 206);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(83, 13);
             this.label12.TabIndex = 26;
@@ -278,7 +301,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(176, 193);
+            this.label13.Location = new System.Drawing.Point(178, 232);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 13);
             this.label13.TabIndex = 27;
@@ -287,7 +310,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(176, 239);
+            this.label14.Location = new System.Drawing.Point(178, 278);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(81, 13);
             this.label14.TabIndex = 28;
@@ -296,28 +319,48 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(176, 216);
+            this.label15.Location = new System.Drawing.Point(178, 255);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(74, 13);
             this.label15.TabIndex = 29;
             this.label15.Text = "B - Bloqueada";
             // 
-            // comboBox2
+            // cb_status
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(16, 188);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 30;
+            this.cb_status.FormattingEnabled = true;
+            this.cb_status.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "D"});
+            this.cb_status.Location = new System.Drawing.Point(18, 227);
+            this.cb_status.Name = "cb_status";
+            this.cb_status.Size = new System.Drawing.Size(121, 21);
+            this.cb_status.TabIndex = 30;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(176, 167);
+            this.label16.Location = new System.Drawing.Point(178, 206);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(89, 13);
             this.label16.TabIndex = 31;
             this.label16.Text = "Instruções Status";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(16, 94);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(55, 13);
+            this.label17.TabIndex = 33;
+            this.label17.Text = "Username";
+            // 
+            // tb_username
+            // 
+            this.tb_username.Location = new System.Drawing.Point(16, 113);
+            this.tb_username.Name = "tb_username";
+            this.tb_username.Size = new System.Drawing.Size(214, 20);
+            this.tb_username.TabIndex = 32;
             // 
             // F_Manutencao
             // 
@@ -325,22 +368,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(965, 414);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.tb_username);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cb_status);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.btn_login);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btn_limpar);
+            this.Controls.Add(this.btn_remover);
+            this.Controls.Add(this.btn_cadastro);
+            this.Controls.Add(this.cb_categoria);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tb_senha);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_nome);
             this.Controls.Add(this.dgv_usuarios);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -353,7 +398,9 @@
             this.Controls.Add(this.lb_name);
             this.Controls.Add(this.lb_saudacoes);
             this.Controls.Add(this.pb_manutencao);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "F_Manutencao";
             this.Text = "Área de manutenção";
             this.Load += new System.EventHandler(this.F_Manutencao_Load);
@@ -378,21 +425,23 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgv_usuarios;
         public System.Windows.Forms.Label lb_nome;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_nome;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_senha;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btn_login;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox cb_categoria;
+        private System.Windows.Forms.Button btn_cadastro;
+        private System.Windows.Forms.Button btn_remover;
+        private System.Windows.Forms.Button btn_limpar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cb_status;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox tb_username;
     }
 }

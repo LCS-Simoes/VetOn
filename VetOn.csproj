@@ -86,6 +86,7 @@
     </Compile>
     <Compile Include="Repositories\AgendaRepository.cs" />
     <Compile Include="Repositories\ConsultaRepository.cs" />
+    <Compile Include="Repositories\ManutencaoRepository.cs" />
     <Compile Include="Repositories\SecretariaRepository.cs" />
     <Compile Include="Repositories\VeterinariaRepository.cs" />
     <Compile Include="Utils\Funcoes.cs" />
