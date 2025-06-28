@@ -16,6 +16,7 @@ namespace VetOn.Forms
     {
 
         string globalQuery;
+        string searchID;
 
         public F_Manutencao()
         {
@@ -29,17 +30,30 @@ namespace VetOn.Forms
             dgv_usuarios.DataSource = Banco.dql(globalQuery);
             dgv_usuarios.Columns[0].Width = 30;
             dgv_usuarios.Columns[1].Width = 50;
-            dgv_usuarios.Columns[2].Width = 50;
+            dgv_usuarios.Columns[2].Width = 60;
             dgv_usuarios.Columns[3].Width = 50;
             dgv_usuarios.Columns[4].Width = 70;
         }
 
 
-        //DataGridView
+        private void atualizarDGV()
+        {
+            globalQuery = @"SELECT n_idusuario AS 'ID', t_nomeusuario AS 'Nome', t_username AS 'Username', t_status AS 'Status', t_nivel AS 'Função' FROM tb_usuarios";
+            dgv_usuarios.DataSource = Banco.dql(globalQuery);
+        }
 
+
+        //DataGridView
         private void dgv_usuarios_SelectionChanged(object sender, EventArgs e)
         {
+            DataGridView dgv = (DataGridView)sender;    
+            int cont = dgv.SelectedRows.Count;
 
+            if (cont > 0)
+            {
+                searchID = dgv_usuarios.Rows[dgv_usuarios.SelectedRows[0].Index].Cells[0].Value.ToString();
+                ManutencaoRepository.listarUsuarios(searchID, tb_id, tb_nome, tb_senha, tb_username, cb_categoria, cb_status);
+            }
         }
 
 
@@ -58,6 +72,7 @@ namespace VetOn.Forms
                     if (tb_username.Text != "")
                     {
                         ManutencaoRepository.CadastrarUsuarios(tb_nome, tb_senha, tb_username, cb_categoria, cb_status);
+                        atualizarDGV();
                     }
                 }
             }
@@ -70,10 +85,12 @@ namespace VetOn.Forms
 
         private void btn_limpar_Click(object sender, EventArgs e)
         {
+            tb_username.Clear();
+            tb_id.Clear();
             tb_nome.Clear();
             tb_senha.Clear();
-            cb_categoria.Items.Clear(); // Se rolar bug 
-            cb_status.Items.Clear(); // Se rolar bug 
+            cb_categoria.Text = "";
+            cb_status.Text = ""; 
         }
     }
 }
