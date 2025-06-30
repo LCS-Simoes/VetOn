@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -63,6 +64,14 @@ namespace VetOn.Repositories
             );
             Banco.dql(query);
             MessageBox.Show("Usuário cadastrado");
+        }
+
+        public static void RemoverUsuario(string searchID)
+        {
+            DialogResult res = MessageBox.Show("Deseja realmente remover esse usuário?", "Remover", MessageBoxButtons.YesNo);
+            string query = String.Format(@"DELETE FROM tb_usuarios WHERE n_idusuario=" + searchID);
+            Banco.dml(query);
+            MessageBox.Show("Usuário removido");
         }
     }
 }

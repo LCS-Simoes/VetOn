@@ -80,7 +80,9 @@ namespace VetOn.Forms
 
         private void btn_remover_Click(object sender, EventArgs e)
         {
-           searchID = dgv_usuarios.Rows[dgv_usuarios.SelectedRows[0].Index].Cells[0].Value.ToString();
+            searchID = dgv_usuarios.Rows[dgv_usuarios.SelectedRows[0].Index].Cells[0].Value.ToString();
+            ManutencaoRepository.RemoverUsuario(searchID);
+            atualizarDGV();
         }
 
         private void btn_limpar_Click(object sender, EventArgs e)
