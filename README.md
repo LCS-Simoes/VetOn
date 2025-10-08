@@ -43,8 +43,6 @@ O banco é composto por tabelas relacionais:
 - `Consultas` – prontuários médicos
 - `Agenda` – controle de horários e lembretes
 - `Funcionarios` – equipe da clínica
-- `Estoque` – medicamentos e produtos
-- `Pagamentos` – controle financeiro
 
 ---
 
